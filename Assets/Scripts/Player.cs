@@ -28,20 +28,18 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {              
+    {
     }
 
     private void FixedUpdate()
     {
         _movements.Move();
 
-        //if (_groundChecker.isGrounded)
-        //{
-        //    _buttonController.jump();
-        //}
-        
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 
 }
