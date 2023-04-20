@@ -11,7 +11,7 @@ public class ButtonController : Controller
     [SerializeField] float jumpCount;
     Movements _movements;
 
-   
+
 
     public ButtonController(GroundChecker groundChecker, Rigidbody rb, Movements movements)
     {
@@ -20,14 +20,9 @@ public class ButtonController : Controller
         _movements = movements;
     }
 
-    public void jump()
+    public void Jump()
     {
-
-        if (_groundChecker.isGrounded)
-        {
-            _movements.Jump();
-        }
-
+        _movements.Jump();
     }
 
     public override Vector3 MoveDir()

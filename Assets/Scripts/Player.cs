@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _movements.Move();
 
+        _movements.Move();
     }
 
     private void OnTriggerEnter(Collider other)
