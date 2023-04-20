@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonController : Controller
+public class ButtonController 
 {
-    GroundChecker _groundChecker;
+    //GroundChecker _groundChecker;
     Rigidbody _rb;
     Vector3 dir;
     [SerializeField] float _jumpForce;
@@ -13,20 +13,17 @@ public class ButtonController : Controller
 
 
 
-    public ButtonController(GroundChecker groundChecker, Rigidbody rb, Movements movements)
+    public ButtonController(Rigidbody rb, Movements movements)
     {
-        _groundChecker = groundChecker;
+        //_groundChecker = groundChecker;
         _rb = rb;
         _movements = movements;
     }
 
     public void Jump()
     {
+        Debug.Log(_movements);
         _movements.Jump();
     }
 
-    public override Vector3 MoveDir()
-    {
-        return dir;
-    }
 }

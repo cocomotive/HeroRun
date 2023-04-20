@@ -22,4 +22,11 @@ public class AnimatorController
     {
         _animator.SetBool("Running", Run);
     }
+
+    public void PlayAttack(bool Attack)
+    {
+        _animator.SetTrigger("Attack 0");
+    }
+
+
 }

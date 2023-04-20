@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
 
     Movements _movements;
     [SerializeField] AnimatorController _animatorController;
-
+    [SerializeField] Collider _sword;
+    [SerializeField] Animator _animator;
     [SerializeField] Controller _myController = null;
     Rigidbody _rb;
     [SerializeField] float speed = 5;
@@ -22,9 +23,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        _groundChecker = GetComponentInChildren<GroundChecker>();
+        _animator = GetComponent<Animator>();
+        _animatorController = new AnimatorController(_animator);
+        _sword.enabled = false;
         _rb = GetComponent<Rigidbody>();
         _movements = new Movements(_myController, transform, _rb, speed, _jumpForce, _rotationSpeed, _animatorController, _jumpCount, _groundChecker);
-        _buttonController = new ButtonController(_groundChecker, _rb, _movements);
+        _buttonController = new ButtonController(_rb, _movements);
+
     }
 
     void Update()
@@ -39,7 +45,19 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
     }
 
+    public void Jump()
+    {
+        Debug.Log(_movements);
+        _movements.Jump();
+    }
+
+    public void Attack()
+    {
+        _sword.enabled = true;
+        _animatorController.PlayAttack(true);
+
+    }
 }

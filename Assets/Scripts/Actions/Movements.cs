@@ -51,6 +51,8 @@ public class Movements
             Debug.Log("salte 1 vez");
         }
 
+        else if (_groundChecker.isGrounded) _jumpCount = 0;
+
         else if (_jumpCount >= 1 && !_groundChecker.isGrounded)
         {
             //dir.y = jumpForce * 0.5f;
@@ -62,8 +64,4 @@ public class Movements
     }
 
 
-    public void Attack()
-    {
-
-    }
 }
