@@ -665,6 +665,10 @@ PrefabInstance:
       propertyPath: _myController
       value: 
       objectReference: {fileID: 2083960508}
+    - target: {fileID: 3956884675597100756, guid: ef6892be8ef44f743b4cf96aa5ba2db5, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5134396550066512182, guid: ef6892be8ef44f743b4cf96aa5ba2db5, type: 3}
       propertyPath: m_Name
       value: MaleCharacterPBR
