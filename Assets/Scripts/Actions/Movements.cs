@@ -56,7 +56,7 @@ public class Movements
         else if (_jumpCount >= 1 && !_groundChecker.isGrounded)
         {
             //dir.y = jumpForce * 0.5f;
-            _rb.AddForce(Vector3.up * (_jumpForce * 0.8f), ForceMode.Impulse);
+            _rb.AddForce(Vector3.up * (_jumpForce * 1.4f), ForceMode.Impulse);
             _jumpCount = 0;
             Debug.Log("doble salto");
         }

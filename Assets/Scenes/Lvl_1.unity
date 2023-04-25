@@ -1056,6 +1056,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2006948512}
     - target: {fileID: 3956884675597100753, guid: ef6892be8ef44f743b4cf96aa5ba2db5, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 9036980633178578166}
+    - target: {fileID: 3956884675597100753, guid: ef6892be8ef44f743b4cf96aa5ba2db5, type: 3}
       propertyPath: _myController
       value: 
       objectReference: {fileID: 2083960508}

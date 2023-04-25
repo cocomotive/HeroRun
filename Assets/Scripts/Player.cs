@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
     {
         _sword.enabled = true;
         _animatorController.PlayAttack(true);
+        _animatorController.PlayIdle(false);
+        _animatorController.PlayRun(false);
 
     }
 }

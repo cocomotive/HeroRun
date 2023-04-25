@@ -25,7 +25,7 @@ public class AnimatorController
 
     public void PlayAttack(bool Attack)
     {
-        _animator.SetTrigger("Attack 0");
+        _animator.SetBool("Attack", Attack);
     }
 
 

@@ -44,12 +44,14 @@ public class JoystickController : Controller, IDragHandler, IEndDragHandler
 
         _animatorController.PlayRun(true); 
         _animatorController.PlayIdle(false);
+        _animatorController.PlayAttack(false);
     }       
 
     public void OnEndDrag(PointerEventData eventData)
     {
         _animatorController.PlayIdle(true);
         _animatorController.PlayRun(false);
+        _animatorController.PlayAttack(false);
         transform.position = initPosition;
         dir = Vector3.zero;
         

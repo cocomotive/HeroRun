@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonController 
 {
-    //GroundChecker _groundChecker;
+    
     Rigidbody _rb;
     Vector3 dir;
     [SerializeField] float _jumpForce;
@@ -15,7 +15,7 @@ public class ButtonController
 
     public ButtonController(Rigidbody rb, Movements movements)
     {
-        //_groundChecker = groundChecker;
+        
         _rb = rb;
         _movements = movements;
     }
