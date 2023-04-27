@@ -19,7 +19,7 @@ public class RedEnemy : MonoBehaviour
     [SerializeField] float _enemyMaxLife;
     [SerializeField] float _enemyCurrentLife;
 
-    private FiniteStateMachine _FSM;
+    private FiniteStateMachine<RedEnemyStates> _FSM;
     public Player _target;
 
     // Start is called before the first frame update

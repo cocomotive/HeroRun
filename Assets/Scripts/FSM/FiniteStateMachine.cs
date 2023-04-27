@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FiniteStateMachine 
+public class FiniteStateMachine<T>
 {
     private IState _currentState;
-    private Dictionary<RedEnemyStates, IState> _allStates = new Dictionary<RedEnemyStates, IState>();
+    private Dictionary<T, IState> _allStates = new Dictionary<T, IState>();
 
     public void Update()
     {
         _currentState.OnUpdate();
     }
 
-    public void ChangeState(RedEnemyStates state)
+    public void ChangeState(T state)
     {
         if (!_allStates.ContainsKey(state)) return;
         if (_currentState != null) _currentState.OnExit();
@@ -20,7 +20,7 @@ public class FiniteStateMachine
         _currentState.OnStart();
     }
 
-    public void AddState(RedEnemyStates key, IState value)
+    public void AddState(T key, IState value)
     {
         if (!_allStates.ContainsKey(key)) _allStates.Add(key, value);
         else _allStates[key] = value;

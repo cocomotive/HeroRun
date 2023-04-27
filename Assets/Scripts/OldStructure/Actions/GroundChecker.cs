@@ -9,6 +9,7 @@ public class GroundChecker : MonoBehaviour
     public float radius = 0.3f;
     public bool isGrounded;
 
+
     private void FixedUpdate()
     {
         Collider[] colliders = Physics.OverlapSphere(this.transform.position, radius, Floor);

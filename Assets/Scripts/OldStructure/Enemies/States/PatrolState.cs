@@ -5,7 +5,7 @@ using UnityEngine;
 public class PatrolState : IState
 {
     private int _currentWP = 0;
-    private FiniteStateMachine _fsm;
+    private FiniteStateMachine<RedEnemy> _fsm;
     private RedEnemy _redEnemy;
     private float _speed;
     private float _viewRange;
@@ -15,7 +15,7 @@ public class PatrolState : IState
     private int _changeTargetDist = 0;
 
 
-    public PatrolState(FiniteStateMachine fsm, RedEnemy redEnemy, float speed, float viewRange, Transform[] waypoints, Transform myPos, int currentPos, int changeTargetDist)
+    public PatrolState(FiniteStateMachine<RedEnemy> fsm, RedEnemy redEnemy, float speed, float viewRange, Transform[] waypoints, Transform myPos, int currentPos, int changeTargetDist)
     {
         _fsm = fsm;
         _redEnemy = redEnemy;

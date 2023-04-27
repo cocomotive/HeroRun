@@ -42,16 +42,16 @@ public class JoystickController : Controller, IDragHandler, IEndDragHandler
         
         Quaternion rotation = Quaternion.Euler(dir.x, 0, 0);
 
-        _animatorController.PlayRun(true); 
-        _animatorController.PlayIdle(false);
-        _animatorController.PlayAttack(false);
+        //_animatorController.PlayRun(true); 
+        //_animatorController.PlayIdle(false);
+        //_animatorController.PlayAttack(false);
     }       
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        _animatorController.PlayIdle(true);
-        _animatorController.PlayRun(false);
-        _animatorController.PlayAttack(false);
+        //_animatorController.PlayIdle(true);
+        //_animatorController.PlayRun(false);
+        //_animatorController.PlayAttack(false);
         transform.position = initPosition;
         dir = Vector3.zero;
         
