@@ -4,18 +4,36 @@ using UnityEngine;
 
 public class Attack : IState
 {
-    public void OnExit()
+    FiniteStateMachine<PlayerStates> _FSM;
+    //Transform _transform;
+    //Controller _myController;
+    Animator _animator;
+    //float _speed;
+    //float _rotationSpeed;
+
+    public Attack(FiniteStateMachine<PlayerStates> FSM, Animator animator)
     {
-        throw new System.NotImplementedException();
+        _FSM = FSM;
+        _animator = animator;
     }
 
     public void OnStart()
     {
-        throw new System.NotImplementedException();
+        PlayerAttack();
     }
 
     public void OnUpdate()
     {
-        throw new System.NotImplementedException();
+        
     }
+    public void OnExit()
+    {
+        _animator.SetBool("Attack", false);        
+    }
+
+    public void PlayerAttack()
+    {
+        _animator.SetBool("Attack", true);
+    }
+
 }
