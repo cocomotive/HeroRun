@@ -12,6 +12,7 @@ public class Jump : IState
     float _jumpForce;
     int _jumpCount;
 
+
     public Jump(FiniteStateMachine<PlayerStates> FSM, GroundChecker groundChecker, Rigidbody rb, Animator animator, float jumpForce)
     {
         _FSM = FSM;
@@ -56,7 +57,7 @@ public class Jump : IState
             }
         }
 
-        else if (_jumpCount >= 1 && !_groundChecker.isGrounded)
+        if (_jumpCount == 1 && !_groundChecker.isGrounded)
         {
             _animator.SetBool("Jump", false);
             _rb.AddForce(Vector3.up * (_jumpForce * 1.4f), ForceMode.Impulse);

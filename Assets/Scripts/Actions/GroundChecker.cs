@@ -8,6 +8,7 @@ public class GroundChecker : MonoBehaviour
     public LayerMask Floor;
     public float radius = 0.3f;
     public bool isGrounded;
+    
 
 
     private void FixedUpdate()

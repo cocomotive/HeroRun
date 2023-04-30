@@ -1612,8 +1612,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127c35460cd449e45a540b42efda3690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sword: {fileID: 2006948512}
+  _animator: {fileID: 5440457906927095510}
   _myController: {fileID: 0}
-  speed: 5
+  _speed: 5
   _jumpForce: 5
   _rotationSpeed: 35
   _jumpCount: 0
@@ -2857,8 +2859,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: OHS03
       objectReference: {fileID: 0}
+    - target: {fileID: 5610884078883986163, guid: 9fbe61d1f4bc091439f25f985dd189a5, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fbe61d1f4bc091439f25f985dd189a5, type: 3}
+--- !u!1 &5961874690224273974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5610884078883986163, guid: 9fbe61d1f4bc091439f25f985dd189a5, type: 3}
+  m_PrefabInstance: {fileID: 2261097447486120133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2006948512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961874690224273974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16598596, y: 1.4156287, z: 0.08912746}
+  m_Center: {x: -0.0063622724, y: 0.5035896, z: 0.000000077146744}
 --- !u!4 &6482656635780456588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5086268201243115593, guid: 9fbe61d1f4bc091439f25f985dd189a5, type: 3}
