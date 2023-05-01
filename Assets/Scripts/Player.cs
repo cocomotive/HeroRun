@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     [SerializeField] float _rotationSpeed;
     [SerializeField] float _jumpCount;
     GroundChecker _groundChecker;
-    ButtonController _buttonController;
+    
 
 
 
@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
         _sword.enabled = false;
         _rb = GetComponent<Rigidbody>();
         _movements = new Movements(_myController, transform, _rb, _speed, _jumpForce, _rotationSpeed, _animatorController, _jumpCount, _groundChecker);
-        _buttonController = new ButtonController(_rb, _movements);
         _FSM.AddState(PlayerStates.Idle, new Idle());
         _FSM.AddState(PlayerStates.Run, new Run(_FSM, transform, _myController, _animator, _speed, _rotationSpeed));
         _FSM.AddState(PlayerStates.jump, new Jump(_FSM, _groundChecker, _rb, _animator, _jumpForce));
@@ -59,11 +58,6 @@ public class Player : MonoBehaviour
         _FSM.Update();
     }
 
-    private void FixedUpdate()
-    {
-
-        //_movements.Move();
-    }
 
     private void OnTriggerEnter(Collider other)
     {

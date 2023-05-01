@@ -44,12 +44,16 @@ public class Jump : IState
         {
             Debug.Log("puedo saltar, estoy grounded");
             _jumpCount = 0;
-            
-            Debug.Log("cambie animacion de salto basico");
             _animator.SetBool("Jump", true);
-            _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-            _jumpCount++;
-            Debug.Log("salte 1 vez");
+
+            if (_jumpCount < 1)
+            {
+                Debug.Log("cambie animacion de salto basico");
+                _animator.SetBool("Jump", true);
+                _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+                _jumpCount++;
+                Debug.Log("salte 1 vez");
+            }
 
 
         }

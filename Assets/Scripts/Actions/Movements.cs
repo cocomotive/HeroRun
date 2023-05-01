@@ -28,40 +28,40 @@ public class Movements
 
     }
 
-    public void Move()
-    {
-        Vector3 myDir = _myController.MoveDir();
-        if (myDir != Vector3.zero)
-        {
-            _transform.position += new Vector3(myDir.x, 0, myDir.z) * _speed * Time.deltaTime;
-            _transform.forward += myDir * Time.deltaTime * _rotationSpeed;
-        }
+    //public void Move()
+    //{
+    //    Vector3 myDir = _myController.MoveDir();
+    //    if (myDir != Vector3.zero)
+    //    {
+    //        _transform.position += new Vector3(myDir.x, 0, myDir.z) * _speed * Time.deltaTime;
+    //        _transform.forward += myDir * Time.deltaTime * _rotationSpeed;
+    //    }
 
-    }
+    //}
 
-    public void Jump()
-    {
+    //public void Jump()
+    //{
 
-        Debug.Log("puedo saltar, estoy grounded");
-        if (_jumpCount < 1 && _groundChecker.isGrounded)
-        {
-            _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-            //dir.y = jumpForce;
-            _jumpCount++;
-            Debug.Log("salte 1 vez");
-        }
+    //    Debug.Log("puedo saltar, estoy grounded");
+    //    if (_jumpCount < 1 && _groundChecker.isGrounded)
+    //    {
+    //        _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+    //        //dir.y = jumpForce;
+    //        _jumpCount++;
+    //        Debug.Log("salte 1 vez");
+    //    }
 
-        else if (_groundChecker.isGrounded) _jumpCount = 0;
+    //    else if (_groundChecker.isGrounded) _jumpCount = 0;
 
-        else if (_jumpCount >= 1 && !_groundChecker.isGrounded)
-        {
-            //dir.y = jumpForce * 0.5f;
-            _rb.AddForce(Vector3.up * (_jumpForce * 1.4f), ForceMode.Impulse);
-            _jumpCount = 0;
-            Debug.Log("doble salto");
-        }
+    //    else if (_jumpCount >= 1 && !_groundChecker.isGrounded)
+    //    {
+    //        //dir.y = jumpForce * 0.5f;
+    //        _rb.AddForce(Vector3.up * (_jumpForce * 1.4f), ForceMode.Impulse);
+    //        _jumpCount = 0;
+    //        Debug.Log("doble salto");
+    //    }
 
-    }
+    //}
 
 
 }
