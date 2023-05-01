@@ -30,43 +30,38 @@ public class Jump : IState
     public void OnUpdate()
     {
         if (_groundChecker.isGrounded) _FSM.ChangeState(PlayerStates.Run);
+
     }
     public void OnExit()
     {
         _animator.SetBool("DoubleJump", false);
-        _groundChecker.isGrounded = true;
     }
 
     public void PlayerJump()
     {
-        Debug.Log("puedo saltar, estoy grounded");
-        _animator.SetBool("Jump", false);
 
         if (_groundChecker.isGrounded)
         {
-            _animator.SetBool("Jump", false);
+            Debug.Log("puedo saltar, estoy grounded");
             _jumpCount = 0;
+            
+            Debug.Log("cambie animacion de salto basico");
+            _animator.SetBool("Jump", true);
+            _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _jumpCount++;
+            Debug.Log("salte 1 vez");
 
-            if (_jumpCount < 1)
-            {
-                _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-                _animator.SetBool("Jump", true);
-                Debug.Log("cambie animacion de salto basico");
-                _jumpCount++;
-                Debug.Log("salte 1 vez");
-            }
+
         }
 
-        if (_jumpCount == 1 && !_groundChecker.isGrounded)
+        else if (_jumpCount == 1 && !_groundChecker.isGrounded)
         {
+            _animator.SetBool("DoubleJump", true);
             _animator.SetBool("Jump", false);
             _rb.AddForce(Vector3.up * (_jumpForce * 1.4f), ForceMode.Impulse);
-            //_animator.SetBool("Jump", false);
-            _animator.SetBool("DoubleJump", true);
             _jumpCount = 0;
             Debug.Log("doble salto");
         }
-
 
     }
 
