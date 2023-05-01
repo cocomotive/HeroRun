@@ -44,8 +44,7 @@ public class Jump : IState
         {
             Debug.Log("puedo saltar, estoy grounded");
             _jumpCount = 0;
-            _animator.SetBool("Jump", true);
-
+            
             if (_jumpCount < 1)
             {
                 Debug.Log("cambie animacion de salto basico");
