@@ -12,7 +12,7 @@ public class PatrolState : IState
 
 
 
-    public PatrolState(FiniteStateMachine<RedEnemyStates> FSM, RedEnemy redEnemy, Animator animator, Transform  transform)
+    public PatrolState(FiniteStateMachine<RedEnemyStates> FSM, RedEnemy redEnemy, Animator animator, Transform transform)
     {
         _FSM = FSM;
         _redEnemy = redEnemy;
@@ -23,7 +23,7 @@ public class PatrolState : IState
 
     public void OnStart()
     {
-        
+
     }
 
     public void OnUpdate()
@@ -37,14 +37,15 @@ public class PatrolState : IState
 
 
 
-    private void Patrol() 
+    private void Patrol()
     {
-        if (_transform.position != _redEnemy._patrolPoints[_redEnemy._currentPatrolPoint].position)
+        if (_transform.position != _redEnemy.patrolPoints[_redEnemy.currentPatrolPoint].position)
         {
-            _transform.position = Vector3.MoveTowards(_transform.position, _redEnemy._patrolPoints[_redEnemy._currentPatrolPoint].position, _patrolSpeed * Time.deltaTime);
+            _transform.position = Vector3.MoveTowards(_transform.position, _redEnemy.patrolPoints[_redEnemy.currentPatrolPoint].position, _patrolSpeed * Time.deltaTime);
+
         }
 
-        else _redEnemy._currentPatrolPoint = (_redEnemy._currentPatrolPoint + 1) % _redEnemy._patrolPoints.Length;
+        else _redEnemy.currentPatrolPoint = (_redEnemy.currentPatrolPoint + 1) % _redEnemy.patrolPoints.Length;
 
 
     }

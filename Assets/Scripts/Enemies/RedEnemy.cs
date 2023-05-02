@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public enum RedEnemyStates
 {
@@ -22,18 +23,21 @@ public class RedEnemy : MonoBehaviour
     [SerializeField] Animator _animator;
 
     private FiniteStateMachine<RedEnemyStates> _FSM;
-    public Player _target;
-    public Transform[] _patrolPoints;
-    public int _currentPatrolPoint;
+    public Player target;
+    public Transform[] patrolPoints;
+    public int currentPatrolPoint;
+    public float lookRadius;
+    NavMeshAgent agent;
 
     
     void Start()
     {
-        _currentPatrolPoint = 0;
+        currentPatrolPoint = 0;
         _FSM = new FiniteStateMachine<RedEnemyStates>();
+        //agent = GetComponent<NavMeshAgent>();
 
         _FSM.AddState(RedEnemyStates.Patrol, new PatrolState(_FSM, this, _animator, transform));
-        _FSM.AddState(RedEnemyStates.Chase, new ChaseState(_FSM));
+        _FSM.AddState(RedEnemyStates.Chase, new ChaseState(_FSM, this, agent));
         _FSM.AddState(RedEnemyStates.Attack, new AttackState());
         _FSM.AddState(RedEnemyStates.Hurt, new HurtState());
         _FSM.AddState(RedEnemyStates.Dead, new DeadState());
@@ -55,5 +59,11 @@ public class RedEnemy : MonoBehaviour
             //cambiar estado a Hurt
         }
         
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }
