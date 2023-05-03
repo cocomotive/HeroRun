@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     Movements _movements;
     FiniteStateMachine<PlayerStates> _FSM;
     [SerializeField] AnimatorController _animatorController;
-    [SerializeField] Collider _sword;
+    public Collider _sword;
     [SerializeField] Animator _animator;
     [SerializeField] Controller _myController = null;
     Rigidbody _rb;
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         _FSM.AddState(PlayerStates.Idle, new Idle());
         _FSM.AddState(PlayerStates.Run, new Run(_FSM, transform, _myController, _animator, _speed, _rotationSpeed));
         _FSM.AddState(PlayerStates.jump, new Jump(_FSM, _groundChecker, _rb, _animator, _jumpForce));
-        _FSM.AddState(PlayerStates.Attack, new Attack(_FSM, _animator));
+        _FSM.AddState(PlayerStates.Attack, new Attack(_FSM, _animator, this));
         _FSM.AddState(PlayerStates.Damaged, new Damaged());
         _FSM.AddState(PlayerStates.Dead, new Dead());
 

@@ -8,13 +8,15 @@ public class Attack : IState
     //Transform _transform;
     //Controller _myController;
     Animator _animator;
+    Player _player;
     //float _speed;
     //float _rotationSpeed;
 
-    public Attack(FiniteStateMachine<PlayerStates> FSM, Animator animator)
+    public Attack(FiniteStateMachine<PlayerStates> FSM, Animator animator, Player player)
     {
         _FSM = FSM;
         _animator = animator;
+        _player = player;
     }
 
     public void OnStart()
@@ -24,16 +26,18 @@ public class Attack : IState
 
     public void OnUpdate()
     {
-        
+
     }
     public void OnExit()
     {
-        _animator.SetBool("Attack", false);        
+        _animator.SetBool("Attack", false);
+        _player._sword.enabled = false;
     }
 
     public void PlayerAttack()
     {
         _animator.SetBool("Attack", true);
+        _player._sword.enabled = true;
     }
 
 }

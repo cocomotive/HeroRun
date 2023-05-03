@@ -3861,6 +3861,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.08380299
       objectReference: {fileID: 0}
+    - target: {fileID: 5961874690224273974, guid: ef6892be8ef44f743b4cf96aa5ba2db5, type: 3}
+      propertyPath: m_Name
+      value: SwordTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 6087232279772679622, guid: ef6892be8ef44f743b4cf96aa5ba2db5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.20523417
