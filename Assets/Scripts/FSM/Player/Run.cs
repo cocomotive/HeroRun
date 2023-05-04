@@ -8,15 +8,17 @@ public class Run : IState
     Transform _transform;
     Controller _myController;
     Animator _animator;
+    Player _player;
     float _speed;
     float _rotationSpeed;
 
-    public Run(FiniteStateMachine<PlayerStates> FSM, Transform transform, Controller controller, Animator animator, float speed, float rotationSpeed)
+    public Run(FiniteStateMachine<PlayerStates> FSM, Transform transform, Controller controller, Animator animator, Player player, float speed, float rotationSpeed)
     {
         _FSM = FSM;
         _transform = transform;
         _myController = controller;
         _animator = animator;
+        _player = player;
         _speed = speed;
         _rotationSpeed = rotationSpeed;
     }
@@ -24,7 +26,10 @@ public class Run : IState
 
     public void OnStart()
     {
-
+        Debug.Log("toy en el piso");
+        _player.jump += _player.FirstJump;
+        _player._jumpCount = 0;
+        _animator.SetTrigger("Grounded");
     }
 
     public void OnUpdate()
@@ -35,7 +40,8 @@ public class Run : IState
 
     public void OnExit()
     {
-
+        _player.jump -= _player.FirstJump;
+        _animator.ResetTrigger("Grounded");
     }
 
     public void Move()

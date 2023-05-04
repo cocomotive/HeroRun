@@ -13,7 +13,7 @@ public class GroundChecker : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Collider[] colliders = Physics.OverlapSphere(this.transform.position, radius, Floor);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, Floor);
 
         if (colliders.Length > 0)
         {
@@ -27,7 +27,7 @@ public class GroundChecker : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(this.transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
 

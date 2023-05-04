@@ -27,9 +27,10 @@ public class Player : MonoBehaviour
     [SerializeField] float _speed = 5;
     [SerializeField] float _jumpForce = 5;
     [SerializeField] float _rotationSpeed;
-    [SerializeField] float _jumpCount;
+    public float _jumpCount;
     GroundChecker _groundChecker;
-    
+
+    public event System.Action jump;
 
 
 
@@ -43,8 +44,8 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _movements = new Movements(_myController, transform, _rb, _speed, _jumpForce, _rotationSpeed, _animatorController, _jumpCount, _groundChecker);
         _FSM.AddState(PlayerStates.Idle, new Idle());
-        _FSM.AddState(PlayerStates.Run, new Run(_FSM, transform, _myController, _animator, _speed, _rotationSpeed));
-        _FSM.AddState(PlayerStates.jump, new Jump(_FSM, _groundChecker, _rb, _animator, _jumpForce));
+        _FSM.AddState(PlayerStates.Run, new Run(_FSM, transform, _myController, _animator, this, _speed, _rotationSpeed));
+        _FSM.AddState(PlayerStates.jump, new Jump(_FSM, _groundChecker, _rb, _animator, this, _jumpForce));
         _FSM.AddState(PlayerStates.Attack, new Attack(_FSM, _animator, this));
         _FSM.AddState(PlayerStates.Damaged, new Damaged());
         _FSM.AddState(PlayerStates.Dead, new Dead());
@@ -66,16 +67,42 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
-        _FSM.ChangeState(PlayerStates.jump);
+        //_FSM.ChangeState(PlayerStates.jump);
+        jump();
     }
+
 
     public void Attack()
     {
         _FSM.ChangeState(PlayerStates.Attack);
 
         _sword.enabled = true;
-        
     }
 
-    
+    public void FirstJump()
+    {
+        _FSM.ChangeState(PlayerStates.jump);
+    }
+
+    public void SecondJump()
+    {
+        if (_jumpCount >= 1)
+        {
+            return;
+        }
+        //_animator.SetBool("DoubleJump", true);
+        //_animator.SetBool("Jump", false);
+        _animator.SetTrigger("DoubleJump 0");
+        _rb.AddForce(Vector3.up * (_jumpForce * 1.4f), ForceMode.Impulse);
+        //_jumpCount = 0;
+        Debug.Log("doble salto");
+        _jumpCount++;
+
+    }
+
+
+
+
+
+
 }

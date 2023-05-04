@@ -14,7 +14,7 @@ public class FiniteStateMachine<T>
 
     public void ChangeState(T state)
     {
-        if (!_allStates.ContainsKey(state)) return;
+        if (!_allStates.ContainsKey(state) || _currentState == _allStates[state]) return;
         if (_currentState != null) _currentState.OnExit();
         _currentState = _allStates[state];
         _currentState.OnStart();
