@@ -43,9 +43,17 @@ public class Player : MonoBehaviour
         _sword.enabled = false;
         _rb = GetComponent<Rigidbody>();
         _movements = new Movements(_myController, transform, _rb, _speed, _jumpForce, _rotationSpeed, _animatorController, _jumpCount, _groundChecker);
-        _FSM.AddState(PlayerStates.Idle, new Idle());
+        
+        //_FSM.AddState(PlayerStates.Idle, new Idle());
+
+        //Entorno Tierra
         _FSM.AddState(PlayerStates.Run, new Run(_FSM, transform, _myController, _animator, this, _speed, _rotationSpeed));
+
+        //Entorno Aire
         _FSM.AddState(PlayerStates.jump, new Jump(_FSM, _groundChecker, _rb, _animator, this, _jumpForce));
+
+
+
         _FSM.AddState(PlayerStates.Attack, new Attack(_FSM, _animator, this));
         _FSM.AddState(PlayerStates.Damaged, new Damaged());
         _FSM.AddState(PlayerStates.Dead, new Dead());
@@ -99,10 +107,6 @@ public class Player : MonoBehaviour
         _jumpCount++;
 
     }
-
-
-
-
 
 
 }
