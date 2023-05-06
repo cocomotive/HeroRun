@@ -19,7 +19,7 @@ public class Attack : IState
         _animator = animator;
         _player = player;
 
-        timerEnd = TimersManager.Create(1, ()=> { FSM.ChangeState(PlayerStates.Run); });
+        timerEnd = TimersManager.Create(0.5f, ()=> { FSM.ChangeState(PlayerStates.Run); });
     }
 
     public void OnStart()
