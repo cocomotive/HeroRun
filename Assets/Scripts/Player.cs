@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
     public void Jump()
     {
         //_FSM.ChangeState(PlayerStates.jump);
-        jump();
+        jump?.Invoke();
     }
 
 
@@ -85,6 +85,11 @@ public class Player : MonoBehaviour
         _FSM.ChangeState(PlayerStates.Attack);
 
         _sword.enabled = true;
+    }
+
+    public void EndAttack()
+    {
+        _FSM.ChangeState(PlayerStates.Run);
     }
 
     public void FirstJump()
@@ -98,6 +103,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
+
         //_animator.SetBool("DoubleJump", true);
         //_animator.SetBool("Jump", false);
         _animator.SetTrigger("DoubleJump 0");

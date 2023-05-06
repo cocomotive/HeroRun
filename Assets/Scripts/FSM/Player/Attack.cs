@@ -9,6 +9,7 @@ public class Attack : IState
     //Controller _myController;
     Animator _animator;
     Player _player;
+    Timer timerEnd;
     //float _speed;
     //float _rotationSpeed;
 
@@ -17,11 +18,15 @@ public class Attack : IState
         _FSM = FSM;
         _animator = animator;
         _player = player;
+
+        timerEnd = TimersManager.Create(1, ()=> { FSM.ChangeState(PlayerStates.Run); });
     }
 
     public void OnStart()
     {
-        PlayerAttack();
+        _animator.SetBool("Attack", true);
+        _player._sword.enabled = true;
+        timerEnd.Reset();
     }
 
     public void OnUpdate()
@@ -36,8 +41,7 @@ public class Attack : IState
 
     public void PlayerAttack()
     {
-        _animator.SetBool("Attack", true);
-        _player._sword.enabled = true;
+
     }
 
 }
