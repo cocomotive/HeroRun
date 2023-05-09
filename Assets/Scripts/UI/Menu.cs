@@ -45,6 +45,10 @@ public class Menu : MonoBehaviour
     }
 
 
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    other.GetComponent<Wincheck>()?.Win;
+    //}
 
 
 
