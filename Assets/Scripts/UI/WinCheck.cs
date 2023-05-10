@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class WinCheck : MonoBehaviour
 {
-    public static bool GameEnd = false;
     public GameObject winMenuUI;
-    
-    
-    
-    void Win()
+    //public Currency currency;
+
+    public void Win()
     {
         winMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameEnd = true;
+       //currency.LvlComplete();
     }
 }

@@ -32,6 +32,8 @@ public class Player : MonoBehaviour
 
     public event System.Action jump;
 
+    public WinCheck winCheck;
+
 
 
     private void Start()
@@ -70,7 +72,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        other.GetComponent<WinCheck>()?.Win();
     }
 
     public void Jump()
