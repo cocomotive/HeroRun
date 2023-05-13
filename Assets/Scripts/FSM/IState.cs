@@ -8,3 +8,11 @@ public interface IState
     public void OnUpdate();
     public void OnExit();
 }
+
+
+public interface IState<FSM>
+{
+    public void OnStart(FSM param);
+    public void OnUpdate(FSM param);
+    public void OnExit(FSM param);
+}

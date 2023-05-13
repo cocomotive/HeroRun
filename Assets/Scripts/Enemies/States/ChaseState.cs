@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class ChaseState : IState
 {
-
+    /*
     FiniteStateMachine<RedEnemyStates> _FSM;
+    */
     RedEnemy _redEnemy;
     NavMeshAgent _agent;
 
 
-
+    /*
     public ChaseState(FiniteStateMachine<RedEnemyStates> FSM, RedEnemy redEnemy, NavMeshAgent agent)
     {
         _FSM = FSM;
@@ -19,7 +20,7 @@ public class ChaseState : IState
         _agent = agent;
 
     }
-
+    */
     public void OnStart()
     {
         
@@ -45,7 +46,7 @@ public class ChaseState : IState
         }
         else if(distance > _redEnemy.lookRadius)
         {
-            _FSM.ChangeState(RedEnemyStates.Patrol);
+            //_FSM.ChangeState(RedEnemyStates.Patrol);
         }
     }
 

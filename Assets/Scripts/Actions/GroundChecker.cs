@@ -7,7 +7,33 @@ public class GroundChecker : MonoBehaviour
     //Bratschi Santiago
     public LayerMask Floor;
     public float radius = 0.3f;
-    public bool isGrounded;
+
+    bool _isGrounded;
+
+    public event System.Action onFloor;
+
+    public event System.Action noFloor;
+
+    public bool isGrounded
+    {
+        set
+        {
+            if (_isGrounded == value)
+                return;
+
+            if(value)
+            {
+                onFloor?.Invoke();
+            }
+            else
+            {
+                noFloor?.Invoke();
+            }
+            _isGrounded = value;
+        }
+
+        get => _isGrounded;
+    }
     
 
 

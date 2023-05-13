@@ -12,7 +12,7 @@ public class JoystickController : Controller, IDragHandler, IEndDragHandler
     [SerializeField] float maxMagnitude;
     [SerializeField] Animator _animator;
     [SerializeField] AnimatorController _animatorController;
-    [SerializeField] Movements _movements;
+    [SerializeField] Movement _movements;
 
     
     private void Start()

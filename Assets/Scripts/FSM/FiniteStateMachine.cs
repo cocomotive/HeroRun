@@ -1,29 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class FiniteStateMachine<T>
+public abstract class FSMachine<T, C> : FSMachineSerialize<T, C> where T : FSMachine<T, C>
 {
-    private IState _currentState;
-    private Dictionary<T, IState> _allStates = new Dictionary<T, IState>();
+    public FSMachine(C context)
+    {
+        Init(context);
+    }
+}
+
+[System.Serializable]
+public abstract class FSMachineSerialize<T,C> where T : FSMachineSerialize<T,C> 
+{
+    /*
+    YO a la hora de heredar esta clase le aclaro en el tipo T quien va a ser el hijo que hereda
+    */
+
+    public C context;
+
+    private IState<T> _currentState;
+
+    T Child
+    {
+        get => (T)this;
+    }
 
     public void Update()
     {
-        _currentState.OnUpdate();
+        _currentState.OnUpdate(Child);
     }
 
-    public void ChangeState(T state)
+    public void ChangeState(IState<T> state)
     {
-        if (!_allStates.ContainsKey(state) || _currentState == _allStates[state]) return;
-        if (_currentState != null) _currentState.OnExit();
-        _currentState = _allStates[state];
-        _currentState.OnStart();
+        if (state == null || state == _currentState)
+            return;
+
+        _currentState.OnExit(Child);
+
+        InitState(state);
     }
 
-    public void AddState(T key, IState value)
+    protected void InitState(IState<T> state)
     {
-        if (!_allStates.ContainsKey(key)) _allStates.Add(key, value);
-        else _allStates[key] = value;
+        _currentState = state;
+
+        _currentState.OnStart(Child);
     }
 
+    public void Init(C context)
+    {
+        this.context = context;
+    }
 }

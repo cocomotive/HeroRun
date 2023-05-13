@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Run : IState
 {
-    FiniteStateMachine<PlayerStates> _FSM;
+    //FiniteStateMachine<PlayerStates> _FSM;
     Transform _transform;
     Controller _myController;
     Animator _animator;
@@ -12,6 +12,7 @@ public class Run : IState
     float _speed;
     float _rotationSpeed;
 
+    /*
     public Run(FiniteStateMachine<PlayerStates> FSM, Transform transform, Controller controller, Animator animator, Player player, float speed, float rotationSpeed)
     {
         _FSM = FSM;
@@ -22,13 +23,13 @@ public class Run : IState
         _speed = speed;
         _rotationSpeed = rotationSpeed;
     }
-
+    */
 
     public void OnStart()
     {
         Debug.Log("toy en el piso");
         _player.jump += _player.FirstJump;
-        _player._jumpCount = 0;
+        //_player._jumpCount = 0;
         _animator.SetTrigger("Grounded");
     }
 

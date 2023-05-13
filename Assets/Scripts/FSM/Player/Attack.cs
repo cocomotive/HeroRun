@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attack : IState
 {
-    FiniteStateMachine<PlayerStates> _FSM;
+    //FiniteStateMachine<PlayerStates> _FSM;
     //Transform _transform;
     //Controller _myController;
     Animator _animator;
@@ -13,6 +13,7 @@ public class Attack : IState
     //float _speed;
     //float _rotationSpeed;
 
+    /*
     public Attack(FiniteStateMachine<PlayerStates> FSM, Animator animator, Player player)
     {
         _FSM = FSM;
@@ -21,7 +22,7 @@ public class Attack : IState
 
         timerEnd = TimersManager.Create(0.5f, ()=> { FSM.ChangeState(PlayerStates.Run); });
     }
-
+    */
     public void OnStart()
     {
         _animator.SetBool("Attack", true);

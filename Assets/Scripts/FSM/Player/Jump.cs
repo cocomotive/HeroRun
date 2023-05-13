@@ -5,7 +5,7 @@ using UnityEngine;
 public class Jump : IState
 {
 
-    FiniteStateMachine<PlayerStates> _FSM;
+    //FiniteStateMachine<PlayerStates> _FSM;
     GroundChecker _groundChecker;
     Rigidbody _rb;
     Animator _animator;
@@ -14,7 +14,7 @@ public class Jump : IState
     float _jumpForce;
     
 
-
+    /*
     public Jump(FiniteStateMachine<PlayerStates> FSM, GroundChecker groundChecker, Rigidbody rb, Animator animator, Player player, float jumpForce)
     {
         _FSM = FSM;
@@ -26,7 +26,7 @@ public class Jump : IState
 
         _timer = TimersManager.Create(0.3f);
     }
-
+    */
     public void OnStart()
     {
         Debug.Log("puedo saltar, estoy grounded");
@@ -48,7 +48,7 @@ public class Jump : IState
         {
             return;
         }
-        if (_groundChecker.isGrounded) _FSM.ChangeState(PlayerStates.Run);
+       // if (_groundChecker.isGrounded) _FSM.ChangeState(PlayerStates.Run);
 
     }
     public void OnExit()

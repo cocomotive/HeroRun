@@ -22,7 +22,7 @@ public class RedEnemy : MonoBehaviour
 
     [SerializeField] Animator _animator;
 
-    private FiniteStateMachine<RedEnemyStates> _FSM;
+    //private FiniteStateMachine<RedEnemyStates> _FSM;
     public Player target;
     public Transform[] patrolPoints;
     public int currentPatrolPoint;
@@ -32,6 +32,7 @@ public class RedEnemy : MonoBehaviour
     
     void Start()
     {
+        /*
         currentPatrolPoint = 0;
         _FSM = new FiniteStateMachine<RedEnemyStates>();
         //agent = GetComponent<NavMeshAgent>();
@@ -43,13 +44,13 @@ public class RedEnemy : MonoBehaviour
         _FSM.AddState(RedEnemyStates.Dead, new DeadState());
 
         _FSM.ChangeState(RedEnemyStates.Patrol);
-
+        */
     }
 
   
     void Update()
     {
-        _FSM.Update();
+        //_FSM.Update();
     }
 
     private void OnTriggerEnter(Collider other)
