@@ -4,33 +4,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class JoystickController : Controller, IDragHandler, IEndDragHandler
+public class JoystickController : Controller, IDragHandler, IEndDragHandler, IPointerDownHandler
 {
-    
+    [SerializeField]
+    ButtonsController controllerEnum;
+
     Vector3 dir;
     Vector3 initPosition;
     [SerializeField] float maxMagnitude;
-    [SerializeField] Animator _animator;
-    [SerializeField] AnimatorController _animatorController;
-    [SerializeField] Movement _movements;
 
     
     private void Start()
     {
         initPosition = transform.position;
-        _animatorController = new AnimatorController(_animator);
+
         
     }
 
-    public JoystickController(AnimatorController animatorController)
-    {
-        _animatorController = animatorController;
-    }
-
-
+    /*
     public override Vector3 MoveDir()
     {
         return dir / maxMagnitude;
+    }
+    */
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        EventManager.events.SearchOrCreate<Enum, _Event, _EventButton>(controllerEnum).Trigger();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -53,9 +52,24 @@ public class JoystickController : Controller, IDragHandler, IEndDragHandler
         //_animatorController.PlayRun(false);
         //_animatorController.PlayAttack(false);
         transform.position = initPosition;
+
+        EventManager.events.SearchOrCreate<Enum, _Event, _EventButton>(controllerEnum).TriggerUp(dir / maxMagnitude);
+
         dir = Vector3.zero;
-        
+    }
+
+    private void Update()
+    {
+        if(dir != Vector3.zero)
+            EventManager.events.SearchOrCreate<Enum, _Event, _EventButton>(controllerEnum).TriggerPress(dir / maxMagnitude);
     }
 
     
+}
+
+public enum ButtonsController
+{
+    movement,
+    attack,
+    jump
 }

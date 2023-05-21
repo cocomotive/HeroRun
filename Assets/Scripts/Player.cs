@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
-
-
 public enum PlayerStates
 {
     Idle,
@@ -22,13 +19,15 @@ public class Player : MonoBehaviour
     [SerializeField] AnimatorController _animatorController;
     public Collider _sword;
     [SerializeField] Animator _animator;
-    [SerializeField] Controller _myController = null;
+    //[SerializeField] Controller _myController = null;
 
     [SerializeField]
     float _jumpForce;
 
+    /*
     [SerializeField]
     float _jumpCount;
+    */
 
     [SerializeField]
     float _speed;
@@ -41,6 +40,13 @@ public class Player : MonoBehaviour
     public event System.Action jump;
 
     public WinCheck winCheck;
+
+
+    _EventButton movementController;
+
+    _EventButton jumpController;
+
+    _EventButton attackController;
 
 
     private void Awake()
@@ -80,23 +86,81 @@ public class Player : MonoBehaviour
         _movements.onGround += _movements_onGround;
 
         _actualVelocity = _speed;
+
+        movementController = EventManager.events.SearchOrCreate<System.Enum, _Event, _EventButton>(ButtonsController.movement);
+
+        jumpController = EventManager.events.SearchOrCreate<System.Enum, _Event, _EventButton>(ButtonsController.jump);
+
+        attackController = EventManager.events.SearchOrCreate<System.Enum, _Event, _EventButton>(ButtonsController.attack);
+
+        movementController.press += Movement_press;
+
+        movementController.press += AnimationInMove;
+
+        movementController.up += AnimationStopMove;
+
+        attackController.action += AttackController_action;
+
+        jumpController.action += SimpleJump;
+    }
+
+    private void SimpleJump(params object[] parameters)
+    {
+        _animator.SetTrigger("Jump 0");
+
+        //_rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse); movimiento se tendria que encargar del impulso
+    }
+
+    private void AnimationStopMove(Vector3 obj)
+    {
+        _animator.SetFloat("Horizontal", 0);
+        _animator.SetFloat("Vertical", 0);
+    }
+
+    private void AnimationInMove(Vector3 obj)
+    {
+        _animator.SetFloat("Horizontal", obj.x);
+        _animator.SetFloat("Vertical", obj.z);
+    }
+
+    private void AttackController_action(params object[] parameters)
+    {
+        _animator.SetTrigger("Attack");
+    }
+
+    private void Movement_press(Vector3 obj)
+    {
+        _movements.movement.Move(obj, _actualVelocity);
     }
 
     private void _movements_onGround()
     {
         _actualVelocity = _speed;
+
+        movementController.press += AnimationInMove;
+
+        jumpController.action += SimpleJump;
     }
 
     private void _movements_onAir()
     {
         _actualVelocity = _airSpeed;
+
+        movementController.press -= AnimationInMove;
+
+        jumpController.action -= SimpleJump;
+
+        jumpController.action += SecondJump;
+    }
+
+    private void SecondJump(params object[] parameters)
+    {
+        SecondJump();
     }
 
     void Update()
     {
-        //_FSM.Update();
         _movements.Update();
-        _movements.movement.Move(_myController.MoveDir(), _actualVelocity);
     }
 
 
@@ -105,23 +169,14 @@ public class Player : MonoBehaviour
         other.GetComponent<WinCheck>()?.Win();
     }
 
-    public void Jump()
-    {
-        //_FSM.ChangeState(PlayerStates.jump);
-        jump?.Invoke();
-    }
-
-
     public void Attack()
     {
-        //_FSM.ChangeState(PlayerStates.Attack);
-
         _sword.enabled = true;
     }
 
     public void EndAttack()
     {
-        //_FSM.ChangeState(PlayerStates.Run);
+        _sword.enabled = false;
     }
 
     public void FirstJump()
@@ -131,19 +186,14 @@ public class Player : MonoBehaviour
 
     public void SecondJump()
     {
-        if (_jumpCount >= 1)
-        {
-            return;
-        }
-
         //_animator.SetBool("DoubleJump", true);
         //_animator.SetBool("Jump", false);
         _animator.SetTrigger("DoubleJump 0");
         //_rb.AddForce(Vector3.up * (_jumpForce * 1.4f), ForceMode.Impulse);
         //_jumpCount = 0;
         Debug.Log("doble salto");
-        _jumpCount++;
 
+        jumpController.action -= SecondJump;
     }
 
 

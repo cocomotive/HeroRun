@@ -47,17 +47,19 @@ public class Run : IState
 
     public void Move()
     {
-        Vector3 myDir = _myController.MoveDir();
+        //Vector3 myDir = _myController.MoveDir();
+        /*
         if (myDir != Vector3.zero)
         {
             _transform.position += new Vector3(myDir.x, 0, myDir.z) * _speed * Time.deltaTime;
             _transform.forward += myDir * Time.deltaTime * _rotationSpeed;
         }
+        */
     }
 
     public void AnimationMove()
     {
-        _animator.SetFloat("Horizontal", _myController.MoveDir().x);
-        _animator.SetFloat("Vertical", _myController.MoveDir().z);
+        //_animator.SetFloat("Horizontal", _myController.MoveDir().x);
+        //_animator.SetFloat("Vertical", _myController.MoveDir().z);
     }
 }
