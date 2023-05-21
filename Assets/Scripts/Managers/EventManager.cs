@@ -78,3 +78,46 @@ public class _EventButton : _Event
         up?.Invoke(vec);
     }
 }
+
+
+public class Pic<K,V>
+{
+    List<PicContainer<K, V>> values;
+    
+    V this[K palabra]
+    {
+        get
+        {
+            for (int i = 0; i < values.Count; i++)
+            {
+                if(values[i].keys.Equals(palabra))
+                {
+                    return values[i].value;
+                }
+            }
+
+            return default;
+        }
+    }
+
+    /*
+    public T SearchOrCreate<T>(K key) where T : V, new()
+    {
+        V result;
+
+        if (!dic.TryGetValue(key, out result))
+        {
+            result = new T();
+            dic.Add(key, result);
+        }
+
+        return (T)result;
+    }
+    */
+}
+
+public class PicContainer<K, V>
+{
+    public V value;
+    public K keys;
+}
