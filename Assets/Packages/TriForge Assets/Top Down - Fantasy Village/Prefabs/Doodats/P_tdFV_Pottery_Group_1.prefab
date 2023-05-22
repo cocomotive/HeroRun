@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1540034558776813710}
   - component: {fileID: 4065968029718045158}
   - component: {fileID: 1804754712315351271}
-  - component: {fileID: 6702179214721581666}
   m_Layer: 0
   m_Name: MSH_tdFV_Pottery_Group_1_LOD1
   m_TagString: Untagged
@@ -29,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7040407126736995710}
   m_RootOrder: 1
@@ -52,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -82,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6702179214721581666
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2934596359253966847}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1529863, y: 0.7854173, z: 2.0441525}
-  m_Center: {x: -0.13174257, y: 0.34236658, z: -0.21446896}
 --- !u!1 &3566310551922478340
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +94,6 @@ GameObject:
   - component: {fileID: 8421283096176596793}
   - component: {fileID: 5464586611950126899}
   - component: {fileID: 1050920860877698510}
-  - component: {fileID: 3152202283487222715}
   m_Layer: 0
   m_Name: MSH_tdFV_Pottery_Group_1_LOD0
   m_TagString: Untagged
@@ -124,6 +111,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7040407126736995710}
   m_RootOrder: 0
@@ -147,6 +135,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -177,19 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3152202283487222715
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3566310551922478340}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1667492, y: 0.79613054, z: 2.0618625}
-  m_Center: {x: -0.13215975, y: 0.33620125, z: -0.21267003}
 --- !u!1 &7709982613632049092
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +175,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7040407126736995710}
-  - component: {fileID: 2877399199790871055}
   m_Layer: 0
   m_Name: P_tdFV_Pottery_Group_1
   m_TagString: Untagged
@@ -216,33 +191,11 @@ Transform:
   m_GameObject: {fileID: 7709982613632049092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3801, y: 1.3801, z: 1.3801}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8421283096176596793}
   - {fileID: 1540034558776813710}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &2877399199790871055
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7709982613632049092}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.13215977, y: 0.3366056, z: -0.21267009}
-  m_Size: 2.0618625
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LastLODIsBillboard: 0
-  m_LODs:
-  - screenRelativeHeight: 0.047583934
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1050920860877698510}
-  - screenRelativeHeight: 0.01412158
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 1804754712315351271}
-  m_Enabled: 1
