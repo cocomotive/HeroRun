@@ -326,6 +326,13 @@ public class Timer : Tim
         return this;
     }
 
+    public Timer SetUnscaled(bool u)
+    {
+        _unscaled = u;
+
+        return this;
+    }
+
     public override float Reset()
     {
         Start();
@@ -352,12 +359,7 @@ public class Timer : Tim
         return aux;
     }
 
-    public Timer SetUnscaled(bool u)
-    {
-        _unscaled = u;
 
-        return this;
-    }
 
 
 

@@ -55,11 +55,15 @@ public class RedEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.TryGetComponent(out Entities entities))
+            entities.health.TakeDamage(5);
+
+        /*
         if (other.gameObject.layer == 8)
         {
-            //cambiar estado a Hurt
+            other
         }
-        
+        */
     }
 
     private void OnDrawGizmosSelected()

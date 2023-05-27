@@ -9,11 +9,11 @@ public class CharacterMovement
     {
         add
         {
-            entorno.onGround += value;
+            _entorno.onGround += value;
         }
         remove
         {
-            entorno.onGround -= value;
+            _entorno.onGround -= value;
         }
     }
 
@@ -21,11 +21,11 @@ public class CharacterMovement
     {
         add
         {
-            entorno.stayGround += value;
+            _entorno.stayGround += value;
         }
         remove
         {
-            entorno.stayGround -= value;
+            _entorno.stayGround -= value;
         }
     }
 
@@ -33,11 +33,11 @@ public class CharacterMovement
     {
         add
         {
-            entorno.onAir += value;
+            _entorno.onAir += value;
         }
         remove
         {
-            entorno.onAir -= value;
+            _entorno.onAir -= value;
         }
     }
 
@@ -45,11 +45,11 @@ public class CharacterMovement
     {
         add
         {
-            entorno.stayAir += value;
+            _entorno.stayAir += value;
         }
         remove
         {
-            entorno.stayAir -= value;
+            _entorno.stayAir -= value;
         }
     }
 
@@ -58,14 +58,18 @@ public class CharacterMovement
     [SerializeField]
     GroundChecker _groundChecker;
 
-    FSMEntorno entorno;
+    FSMEntorno _entorno;
 
     [SerializeField]
     AnimatorController _animatorController;
 
+    Rigidbody _rb;
+
     public void Init()
     {
-        entorno = new FSMEntorno(movement);
+        _entorno = new FSMEntorno(movement);
+
+        _rb = movement.GetComponent<Rigidbody>();
 
         _groundChecker.onFloor += _groundChecker_onFloor;
         _groundChecker.noFloor += _groundChecker_noFloor;
@@ -73,17 +77,24 @@ public class CharacterMovement
 
     public void Update()
     {
-        entorno.Update();
+        _entorno.Update();
     }
 
     private void _groundChecker_noFloor()
     {
-        entorno.ChangeState(entorno.aire);
+        _entorno.ChangeState(_entorno.aire);
     }
 
     private void _groundChecker_onFloor()
     {
-        entorno.ChangeState(entorno.tierra);
+        _entorno.ChangeState(_entorno.tierra);
+    }
+
+    public void Impulse(Vector3 dir)
+    {
+        //_rb.AddForce(dir, ForceMode.Impulse);
+
+        _rb.velocity = dir;
     }
 }
 

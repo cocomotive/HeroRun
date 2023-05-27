@@ -11,7 +11,7 @@ public enum PlayerStates
     Damaged,
     Dead
 }
-public class Player : MonoBehaviour
+public class Player : Entities
 {
     [SerializeField]
     CharacterMovement _movements;
@@ -41,6 +41,13 @@ public class Player : MonoBehaviour
 
     public WinCheck winCheck;
 
+    [Header("Attack")]
+    public float _radius;
+
+    public Vector3 _distance;
+
+    public LayerMask layerMaskAttack;
+
 
     _EventButton movementController;
 
@@ -49,8 +56,9 @@ public class Player : MonoBehaviour
     _EventButton attackController;
 
 
-    private void Awake()
+    override protected void Awake()
     {
+        base.Awake();
         _movements.Init();
     }
 
@@ -107,6 +115,9 @@ public class Player : MonoBehaviour
     private void SimpleJump(params object[] parameters)
     {
         _animator.SetTrigger("Jump 0");
+        _animator.ResetTrigger("Grounded");
+
+        _movements.Impulse(Vector3.up * _jumpForce);
 
         //_rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse); movimiento se tendria que encargar del impulso
     }
@@ -137,7 +148,11 @@ public class Player : MonoBehaviour
     {
         _actualVelocity = _speed;
 
+        _animator.SetTrigger("Grounded");
+
         movementController.press += AnimationInMove;
+
+        jumpController.action -= SecondJump;
 
         jumpController.action += SimpleJump;
     }
@@ -171,13 +186,20 @@ public class Player : MonoBehaviour
 
     public void Attack()
     {
-        _sword.enabled = true;
+        //_sword.enabled = true;
+
+        foreach (var item in AttackDetection())
+        {
+            //aca logica de REALIZAR daño
+        }
     }
 
+    /*
     public void EndAttack()
     {
         _sword.enabled = false;
     }
+    */
 
     public void FirstJump()
     {
@@ -193,8 +215,25 @@ public class Player : MonoBehaviour
         //_jumpCount = 0;
         Debug.Log("doble salto");
 
+        _movements.Impulse(Vector3.up * (_jumpForce*1.5f));
+
         jumpController.action -= SecondJump;
     }
 
+    public Vector3 AttackDetectPos()
+    {
+        return transform.position + (transform.TransformVector(_distance));
+    }
+
+    public virtual Collider[] AttackDetection()
+    {
+        return Physics.OverlapSphere(AttackDetectPos(), _radius, layerMaskAttack);
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(AttackDetectPos(), _radius);
+    }
 
 }
