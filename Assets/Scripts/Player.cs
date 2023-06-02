@@ -11,12 +11,14 @@ public enum PlayerStates
     Damaged,
     Dead
 }
-public class Player : Entities
+public class Player : AttackEntities
 {
-    [SerializeField]
-    CharacterMovement _movements;
+   
+
     //FiniteStateMachine<PlayerStates> _FSM;
     [SerializeField] AnimatorController _animatorController;
+    [Header("Player")]
+
     public Collider _sword;
     [SerializeField] Animator _animator;
     //[SerializeField] Controller _myController = null;
@@ -41,26 +43,11 @@ public class Player : Entities
 
     public WinCheck winCheck;
 
-    [Header("Attack")]
-    public float _radius;
-
-    public Vector3 _distance;
-
-    public LayerMask layerMaskAttack;
-
-
     _EventButton movementController;
 
     _EventButton jumpController;
 
     _EventButton attackController;
-
-
-    override protected void Awake()
-    {
-        base.Awake();
-        _movements.Init();
-    }
 
 
     private void Start()
@@ -101,6 +88,8 @@ public class Player : Entities
 
         attackController = EventManager.events.SearchOrCreate<System.Enum, _Event, _EventButton>(ButtonsController.attack);
 
+        health.onLifeChange += Health_onLifeChange;
+
         movementController.press += Movement_press;
 
         movementController.press += AnimationInMove;
@@ -112,6 +101,21 @@ public class Player : Entities
         jumpController.action += SimpleJump;
     }
 
+    private void Health_onLifeChange(IGetPercentage obj)
+    {
+        EventManager.events.SearchOrCreate(EnumUI.life).Trigger(obj.Percentage());
+        //dentro de UI
+        //EventManager.events.SearchOrCreate(EnumUI.life).action += Player_action;
+    }
+
+    /*
+    private void Player_action(params object[] parameters)
+    {
+        float fillAmount = (float)parameters[0];
+
+        
+    }
+    */
     private void SimpleJump(params object[] parameters)
     {
         _animator.SetTrigger("Jump 0");
@@ -173,27 +177,12 @@ public class Player : Entities
         SecondJump();
     }
 
-    void Update()
-    {
-        _movements.Update();
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
         other.GetComponent<WinCheck>()?.Win();
     }
 
-    public void Attack()
-    {
-        //_sword.enabled = true;
-
-        foreach (var item in AttackDetection())
-        {
-            //aca logica de REALIZAR daño
-        }
-    }
-
+   
     /*
     public void EndAttack()
     {
@@ -219,21 +208,10 @@ public class Player : Entities
 
         jumpController.action -= SecondJump;
     }
+}
 
-    public Vector3 AttackDetectPos()
-    {
-        return transform.position + (transform.TransformVector(_distance));
-    }
 
-    public virtual Collider[] AttackDetection()
-    {
-        return Physics.OverlapSphere(AttackDetectPos(), _radius, layerMaskAttack);
-    }
-    
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(AttackDetectPos(), _radius);
-    }
-
+public enum EnumUI
+{
+    life
 }

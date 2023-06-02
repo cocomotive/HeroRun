@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Entities : MonoBehaviour
 {
+    [Header("Entities")]
+
     public Health health;
 
     public Color damged;
