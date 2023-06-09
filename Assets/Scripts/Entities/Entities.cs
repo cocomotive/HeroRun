@@ -105,7 +105,11 @@ public class Entities : MonoBehaviour
         health.onDeath += Health_onDeath;
     }
 
- 
+    private void OnDestroy()
+    {
+        timerDmg.Stop();
+    }
+
 }
 
 [System.Serializable]

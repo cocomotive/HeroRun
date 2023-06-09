@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PatrolState : IState
+public class PatrolState //: IState
 {
+    /*
     //FiniteStateMachine<RedEnemyStates> _FSM;
     RedEnemy _redEnemy;
     Animator _animator;
     Transform _transform;
     float _patrolSpeed = 5;
 
-/*
+
 
     public PatrolState(FiniteStateMachine<RedEnemyStates> FSM, RedEnemy redEnemy, Animator animator, Transform transform)
     {
@@ -21,7 +22,6 @@ public class PatrolState : IState
 
     }
 
-    */
     public void OnStart()
     {
 
@@ -50,4 +50,6 @@ public class PatrolState : IState
 
 
     }
+
+    */
 }

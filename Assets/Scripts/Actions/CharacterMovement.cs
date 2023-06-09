@@ -102,9 +102,9 @@ public class CharacterMovement
 
 public class FSMEntorno : FSMachine<FSMEntorno, Movement>
 {
-    public EventState tierra = new EventState();
+    public EventState<FSMEntorno> tierra = new EventState<FSMEntorno>();
 
-    public EventState aire = new EventState();
+    public EventState<FSMEntorno> aire = new EventState<FSMEntorno>();
 
     public event System.Action onGround
     {
@@ -159,23 +159,44 @@ public class FSMEntorno : FSMachine<FSMEntorno, Movement>
     }
 }
 
-public class EventState : IState<FSMEntorno>
+public class EventState<T> : IState<T>
 {
     public event System.Action on;
 
     public event System.Action stay;
 
-    public void OnExit(FSMEntorno param)
+    public void OnExit(T param)
     {
     }
 
-    public void OnStart(FSMEntorno param)
+    public void OnStart(T param)
     {
         on?.Invoke();
     }
 
-    public void OnUpdate(FSMEntorno param)
+    public void OnUpdate(T param)
     {
         stay?.Invoke();
+    }
+}
+
+public class EventStateParam<T> : IState<T>
+{
+    public event System.Action<T> on;
+
+    public event System.Action<T> stay;
+
+    public void OnExit(T param)
+    {
+    }
+
+    public void OnStart(T param)
+    {
+        on?.Invoke(param);
+    }
+
+    public void OnUpdate(T param)
+    {
+        stay?.Invoke(param);
     }
 }

@@ -12,9 +12,12 @@ public class AttackEntities : MoveEntities
     public LayerMask layerMaskAttack;
 
     [SerializeField]
+    bool damagaToMe = false;
+
+    [SerializeField]
     float _attackDmg;
 
-    public void Attack()
+    public virtual void Attack()
     {
         //_sword.enabled = true;
 
@@ -39,7 +42,7 @@ public class AttackEntities : MoveEntities
 
         foreach (var item in colAuxs)
         {
-            if (item.TryGetComponent(out Entities entitie) && !result.Contains(entitie))
+            if (item.TryGetComponent(out Entities entitie) && !result.Contains(entitie) && (damagaToMe || entitie != this))
             {
                 result.Add(entitie);
             }
