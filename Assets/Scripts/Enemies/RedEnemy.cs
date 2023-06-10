@@ -210,6 +210,8 @@ public class Patrol
         {
             indexPatrolPoint = 0;
         }
+
+        distance = Distance();
     }
 
     public Vector3 Distance()
@@ -230,7 +232,7 @@ public class Patrol
 
     public bool MinimalChck()
     {
-        return distance.sqrMagnitude < minimalDistance * minimalDistance;
+        return distance.sqrMagnitude <= minimalDistance * minimalDistance;
     }
 
     public void Init(Transform context)
