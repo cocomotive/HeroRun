@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public class SimpleCollectibleScript : MonoBehaviour {
 
 	public enum CollectibleTypes {NoType, Type1, Type2, Type3, Type4, Type5}; // you can replace this with your own labels for the types of collectibles in your game!
@@ -13,13 +13,16 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 	public float rotationSpeed;
 
-	public AudioClip collectSound;
+	//public AudioClip collectSound;
 
 	public GameObject collectEffect;
 
+	public AudioManager audiomanager;
+
 	// Use this for initialization
-	void Start () {
-		
+	void Start () 
+	{
+		audiomanager = AudioManager.instance;
 	}
 	
 	// Update is called once per frame
@@ -39,8 +42,8 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 	public void Collect()
 	{
-		if(collectSound)
-			AudioSource.PlayClipAtPoint(collectSound, transform.position);
+		//if(collectSound)
+		//	AudioSource.PlayClipAtPoint(collectSound, transform.position);
 		if(collectEffect)
 			Instantiate(collectEffect, transform.position, Quaternion.identity);
 
@@ -49,8 +52,9 @@ public class SimpleCollectibleScript : MonoBehaviour {
 		if (CollectibleType == CollectibleTypes.NoType) {
 
 			//Add in code here;
-
+			audiomanager.Play("Coin");
 			Debug.Log ("Sume 100 puntos");
+
 		}
 		if (CollectibleType == CollectibleTypes.Type1) {
 
