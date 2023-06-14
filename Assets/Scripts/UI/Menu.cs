@@ -8,7 +8,13 @@ public class Menu : MonoBehaviour
 
     public static bool GamePaused = false;
     public GameObject pauseMenuUI;
+    public AudioManager audioManager;
 
+
+    private void Start()
+    {
+        audioManager = AudioManager.instance;
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -44,6 +50,18 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void BtSound()
+    {
+        audioManager.Play("Button");
+    }
+    public void BackBtSound()
+    {
+        audioManager.Play("BackBt");
+    }
+    public void BuyBtSound()
+    {
+        audioManager.Play("BuyBt");
+    }
 
     //private void OnTriggerEnter(Collider other)
     //{
