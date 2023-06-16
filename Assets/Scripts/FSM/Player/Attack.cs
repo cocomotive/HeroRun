@@ -2,47 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : IState
+[System.Serializable]
+public class AttackClass
 {
-    //FiniteStateMachine<PlayerStates> _FSM;
-    //Transform _transform;
-    //Controller _myController;
-    Animator _animator;
-    Player _player;
-    Timer timerEnd;
-    //float _speed;
-    //float _rotationSpeed;
+    [SerializeField]
+    Transform reference;
 
-    /*
-    public Attack(FiniteStateMachine<PlayerStates> FSM, Animator animator, Player player)
+    [SerializeField]
+    float _attackDmg;
+
+    public virtual void Attack(params Entities[] toAttack)
     {
-        _FSM = FSM;
-        _animator = animator;
-        _player = player;
+        //_sword.enabled = true;
 
-        timerEnd = TimersManager.Create(0.5f, ()=> { FSM.ChangeState(PlayerStates.Run); });
+        foreach (var item in toAttack)
+        {
+            //aca logica de REALIZAR daño
+            item.TakeDamage(_attackDmg, reference.position - item.transform.position);//realizo el daño para cada tipo de entidad dentro de mi area de ataque
+        }
     }
-    */
-    public void OnStart()
-    {
-        _animator.SetBool("Attack", true);
-        _player._sword.enabled = true;
-        timerEnd.Reset();
-    }
-
-    public void OnUpdate()
-    {
-
-    }
-    public void OnExit()
-    {
-        _animator.SetBool("Attack", false);
-        _player._sword.enabled = false;
-    }
-
-    public void PlayerAttack()
-    {
-
-    }
-
 }

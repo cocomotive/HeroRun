@@ -204,6 +204,8 @@ public class Player : AttackEntities
         //_jumpCount = 0;
         Debug.Log("doble salto");
 
+        _movements.CancelFall();
+
         _movements.Impulse(Vector3.up * (_jumpForce*1.5f));
 
         jumpController.action -= SecondJump;

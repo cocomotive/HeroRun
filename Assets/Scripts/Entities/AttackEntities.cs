@@ -15,17 +15,11 @@ public class AttackEntities : MoveEntities
     bool damagaToMe = false;
 
     [SerializeField]
-    float _attackDmg;
+    AttackClass attackClass;
 
     public virtual void Attack()
     {
-        //_sword.enabled = true;
-
-        foreach (var item in AttackDetection())
-        {
-            //aca logica de REALIZAR daño
-            item.health.TakeDamage(_attackDmg);//realizo el daño para cada tipo de entidad dentro de mi area de ataque
-        }
+        attackClass.Attack(AttackDetection());
     }
 
 

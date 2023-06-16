@@ -1617,21 +1617,27 @@ MonoBehaviour:
       total: 100
       _current: 100
   damged: {r: 1, g: 0, b: 0, a: 1}
+  drop: []
   timeColorDmg: 1
+  feedbackFrequency: 10
   _movements:
     movement: {fileID: 836318300280787422}
     _groundChecker: {fileID: 3956884674825549533}
+  _radius: 1
+  _distance: {x: 0, y: 0.77, z: 1.06}
+  layerMaskAttack:
+    serializedVersion: 2
+    m_Bits: 0
+  damagaToMe: 0
+  attackClass:
+    reference: {fileID: 5479432522662476684}
+    _attackDmg: 10
   _sword: {fileID: 2006948512}
   _animator: {fileID: 5440457906927095510}
   _jumpForce: 5
   _speed: 5
   _airSpeed: 5
   winCheck: {fileID: 0}
-  _radius: 1
-  _distance: {x: 0, y: 0.77, z: 1.06}
-  layerMaskAttack:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &836318300280787422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,6 +1653,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   _speed: 10
   _rotationSpeed: 15
+  desaceleration: 0
 --- !u!1 &5217114327037380946
 GameObject:
   m_ObjectHideFlags: 0

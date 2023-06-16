@@ -90,11 +90,16 @@ public class CharacterMovement
         _entorno.ChangeState(_entorno.tierra);
     }
 
+    public void CancelFall()
+    {
+        _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+    }
+
     public void Impulse(Vector3 dir)
     {
         //_rb.AddForce(dir, ForceMode.Impulse);
 
-        _rb.velocity = dir;
+        _rb.velocity += dir;
     }
 }
 

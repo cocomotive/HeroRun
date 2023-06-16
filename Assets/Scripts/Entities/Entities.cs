@@ -84,6 +84,10 @@ public class Entities : MonoBehaviour
         //Instantiate(drop[Random.Range(0, drop.Count)], transform.position + new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)), Quaternion.identity);
     }
 
+    public virtual void TakeDamage(float dmg, Vector3 dirDamage)
+    {
+        health.TakeDamage(dmg);
+    }
 
     protected virtual void Awake()
     {
