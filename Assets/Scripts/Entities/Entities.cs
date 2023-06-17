@@ -22,7 +22,7 @@ public class Entities : MonoBehaviour
     }
 
     [SerializeField]
-    List<GameObject> drop = new List<GameObject>();
+    List<Drop> drop = new List<Drop>();
 
     Renderer[] _renderer;
 
@@ -78,7 +78,13 @@ public class Entities : MonoBehaviour
     {
         for (int i = 0; i < drop.Count; i++)
         {
-            Instantiate(drop[i], transform.position + new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)), Quaternion.identity);
+            var aux = drop[i].random;
+
+            for (int ii = 0; ii < aux; ii++)
+            {
+                PoolManager.SpawnPoolObject(PoolManager.SrchInCategory("Particulas", drop[i].gameObject.name), transform.position);
+            }
+            //Instantiate(drop[i], transform.position + new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)), Quaternion.identity);
         }
 
         //Instantiate(drop[Random.Range(0, drop.Count)], transform.position + new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)), Quaternion.identity);
@@ -161,4 +167,15 @@ public class Health
         onLifeChange?.Invoke(life);
     }
 
+}
+
+[System.Serializable]
+public struct Drop
+{
+    public GameObject gameObject;
+
+    public int min;
+    public int max;
+
+    public int random => Random.Range(min, max-1);
 }

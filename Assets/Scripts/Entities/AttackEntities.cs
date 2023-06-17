@@ -19,7 +19,7 @@ public class AttackEntities : MoveEntities
 
     public virtual void Attack()
     {
-        attackClass.Attack(AttackDetection());
+        attackClass.Attack( transform.position ,AttackDetection());
     }
 
 

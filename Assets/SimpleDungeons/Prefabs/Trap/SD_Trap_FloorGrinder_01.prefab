@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3371306}
   - component: {fileID: 2377460}
   - component: {fileID: 1549203424116425977}
+  - component: {fileID: 5965552427257063860}
   m_Layer: 0
   m_Name: Grinder_01
   m_TagString: Untagged
@@ -98,6 +99,21 @@ CapsuleCollider:
   m_Height: 8
   m_Direction: 2
   m_Center: {x: 0.00000011920929, y: -0.00000011920929, z: 0.00000023841858}
+--- !u!114 &5965552427257063860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65ea5310ee9a494cbd94123be76625a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackClass:
+    reference: {fileID: 401654}
+    _attackDmg: 10
 --- !u!1 &196126
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +127,6 @@ GameObject:
   - component: {fileID: 2395668}
   - component: {fileID: 9567376}
   - component: {fileID: 5389374899902563759}
-  - component: {fileID: 890851045}
   m_Layer: 0
   m_Name: SD_Trap_FloorGrinder_01
   m_TagString: Untagged
@@ -218,18 +233,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.000008, y: 8.189685, z: 10.000004}
   m_Center: {x: -5.000004, y: -4.0948424, z: 4.999998}
---- !u!114 &890851045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65ea5310ee9a494cbd94123be76625a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackClass:
-    reference: {fileID: 473922}
-    _attackDmg: 10

@@ -11,7 +11,7 @@ public class PinchoMoruno : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Entities>(out var entity))
         {
-            attackClass.Attack(entity);
+            attackClass.Attack(collision.GetContact(0).point , entity);
         }
     }
 }
