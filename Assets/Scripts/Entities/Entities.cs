@@ -36,6 +36,9 @@ public class Entities : MonoBehaviour
     [SerializeField]
     int feedbackFrequency = 10;
 
+    [SerializeField]
+    GameObject particlesOnDead;
+
     void PrivateWhileDmg()
     {
         if(((int)(Time.realtimeSinceStartup * feedbackFrequency)) % 2 == 0)
@@ -76,6 +79,8 @@ public class Entities : MonoBehaviour
 
     private void Health_onDeath()
     {
+        PoolManager.SpawnPoolObject(PoolManager.SrchInCategory("Particulas", particlesOnDead.name), transform.position);
+
         for (int i = 0; i < drop.Count; i++)
         {
             var aux = drop[i].random;
@@ -83,7 +88,6 @@ public class Entities : MonoBehaviour
             for (int ii = 0; ii < aux; ii++)
             {
                 var offset = new Vector3(Random.Range(-1,2), 0.5f, Random.Range(-1, 2));
-
 
                 PoolManager.SpawnPoolObject(PoolManager.SrchInCategory("Recolectables", drop[i].gameObject.name), transform.position + offset);
             }
