@@ -82,7 +82,10 @@ public class Entities : MonoBehaviour
 
             for (int ii = 0; ii < aux; ii++)
             {
-                PoolManager.SpawnPoolObject(PoolManager.SrchInCategory("Particulas", drop[i].gameObject.name), transform.position);
+                var offset = new Vector3(Random.Range(-1,2), 0.5f, Random.Range(-1, 2));
+
+
+                PoolManager.SpawnPoolObject(PoolManager.SrchInCategory("Recolectables", drop[i].gameObject.name), transform.position + offset);
             }
             //Instantiate(drop[i], transform.position + new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)), Quaternion.identity);
         }

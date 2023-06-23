@@ -13,8 +13,6 @@ public enum PlayerStates
 }
 public class Player : AttackEntities
 {
-   
-
     //FiniteStateMachine<PlayerStates> _FSM;
     [SerializeField] AnimatorController _animatorController;
     [Header("Player")]
@@ -52,30 +50,9 @@ public class Player : AttackEntities
 
     private void Start()
     {
-        //_FSM = new FiniteStateMachine<PlayerStates>();
-       
         _animator = GetComponent<Animator>();
         _animatorController = new AnimatorController(_animator);
         _sword.enabled = false;
-
-
-        //_FSM.AddState(PlayerStates.Idle, new Idle());
-
-        /*
-        //Entorno Tierra
-        _FSM.AddState(PlayerStates.Run, new Run(_FSM, transform, _myController, _animator, this, _speed, _rotationSpeed));
-
-        //Entorno Aire
-        _FSM.AddState(PlayerStates.jump, new Jump(_FSM, _groundChecker, _rb, _animator, this, _jumpForce));
-        */
-
-        /*
-        _FSM.AddState(PlayerStates.Attack, new Attack(_FSM, _animator, this));
-        _FSM.AddState(PlayerStates.Damaged, new Damaged());
-        _FSM.AddState(PlayerStates.Dead, new Dead());
-
-        _FSM.ChangeState(PlayerStates.Run);
-        */
 
         _movements.onAir += _movements_onAir;
         _movements.onGround += _movements_onGround;
@@ -104,18 +81,9 @@ public class Player : AttackEntities
     private void Health_onLifeChange(IGetPercentage obj)
     {
         EventManager.events.SearchOrCreate(EnumUI.life).Trigger(obj.Percentage());
-        //dentro de UI
-        //EventManager.events.SearchOrCreate(EnumUI.life).action += Player_action;
     }
 
-    /*
-    private void Player_action(params object[] parameters)
-    {
-        float fillAmount = (float)parameters[0];
-
-        
-    }
-    */
+  
     private void SimpleJump(params object[] parameters)
     {
         _animator.SetTrigger("Jump 0");

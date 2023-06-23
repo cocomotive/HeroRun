@@ -67,8 +67,4 @@ public class Menu : MonoBehaviour
     //{
     //    other.GetComponent<Wincheck>()?.Win;
     //}
-
-
-
-
 }

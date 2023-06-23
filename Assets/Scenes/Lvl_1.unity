@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.015078926, g: 0.009024546, b: 0.014053655, a: 1}
+  m_IndirectSpecularColor: {r: 0.01511346, g: 0.009044822, b: 0.014094543, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -815,11 +815,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 296bf7e741cbeaa478fbbd496a7ff80d, type: 3}
---- !u!1 &109495750 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2681670293113314295, guid: ef6892be8ef44f743b4cf96aa5ba2db5, type: 3}
-  m_PrefabInstance: {fileID: 3956884675014382112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &113415245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4802539185917164, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
@@ -3781,7 +3776,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 839312513}
-  - component: {fileID: 839312515}
   - component: {fileID: 839312514}
   m_Layer: 5
   m_Name: HealthBar
@@ -3825,58 +3819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fe1543ffd365b41af5497c6d92f212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 839312515}
---- !u!114 &839312515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839312512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 0
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 0
-  m_TargetGraphic: {fileID: 0}
-  m_FillRect: {fileID: 1959088478}
-  m_HandleRect: {fileID: 0}
-  m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 1
-  m_Value: 10
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
+  slider: {fileID: 1959088479}
 --- !u!1001 &848580828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4344,11 +4287,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
---- !u!1 &940085831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 191664, guid: 393a18a191d4d6f4a968edb53f6747c0, type: 3}
-  m_PrefabInstance: {fileID: 1187432317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &940085840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 411770, guid: 393a18a191d4d6f4a968edb53f6747c0, type: 3}
@@ -5230,8 +5168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.0000072, y: 0}
+  m_SizeDelta: {x: 1.9999858, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1107645796
 MonoBehaviour:
@@ -9058,16 +8996,16 @@ RectTransform:
   m_GameObject: {fileID: 1959088477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.45743942, y: 0.438326, z: 0.31445563}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 839312513}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 112, y: -24}
-  m_SizeDelta: {x: 424, y: 94}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959088479
 MonoBehaviour:
@@ -9090,10 +9028,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: f711318c7abec5e49a816c3bde987ac6, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -9778,40 +9716,12 @@ MonoBehaviour:
   eneabled: 1
   categoriesOfPool:
   - name: Particulas
-    objectPool:
-    - prefab: {fileID: 109495750}
-      utilityRefence: []
-      amount: 15
-      pool: []
-    - prefab: {fileID: 0}
-      utilityRefence: []
-      amount: 15
-      pool: []
-    - prefab: {fileID: 1107645794}
-      utilityRefence: []
-      amount: 15
-      pool: []
-    - prefab: {fileID: 940085831}
-      utilityRefence: []
-      amount: 15
-      pool: []
+    objectPool: []
   - name: Recolectables
     objectPool:
-    - prefab: {fileID: 109495750}
+    - prefab: {fileID: 5462504586549689884, guid: 6c4a3085d621d7c4eaa017dbd1232568, type: 3}
       utilityRefence: []
-      amount: 15
-      pool: []
-    - prefab: {fileID: 0}
-      utilityRefence: []
-      amount: 15
-      pool: []
-    - prefab: {fileID: 1107645794}
-      utilityRefence: []
-      amount: 15
-      pool: []
-    - prefab: {fileID: 940085831}
-      utilityRefence: []
-      amount: 15
+      amount: 20
       pool: []
   references:
     version: 2

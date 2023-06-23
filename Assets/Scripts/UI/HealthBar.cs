@@ -5,18 +5,15 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Slider slider;
+    public Image slider;
 
-
-    public void SetMaxHealth(int health)
+    private void Start()
     {
-        slider.maxValue = health;
-        slider.value = health;
-    }
-    
-    public void SetHealth(int health)
-    {
-        slider.value = health;
-    }
+        EventManager.events.SearchOrCreate(EnumUI.life).action += Player_action;
+    }    
 
+    private void Player_action(params object[] parameters)
+    {
+        slider.fillAmount = (float)parameters[0];
+    }
 }
