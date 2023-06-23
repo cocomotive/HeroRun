@@ -29,8 +29,11 @@ public class Currency : MonoBehaviour
     {
         currency = currency + 100;
         Debug.Log("+100");
+    }
 
-
+    public void Buy()
+    {
+        
     }
 
 
