@@ -53,6 +53,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 			//Add in code here;
 			audiomanager.Play("Coin");
+			
 			Debug.Log ("Sume 100 puntos");
 
 		}
