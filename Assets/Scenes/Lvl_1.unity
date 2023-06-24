@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.01511346, g: 0.009044822, b: 0.014094543, a: 1}
+  m_IndirectSpecularColor: {r: 0.015113503, g: 0.009046664, b: 0.014094996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5774,6 +5774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ccdc236c6280334298827e2f576556b, type: 3}
+--- !u!1 &1199390174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2141280362647141683, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
+  m_PrefabInstance: {fileID: 1822074144}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1209750281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8222,7 +8227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -8231,7 +8236,7 @@ PrefabInstance:
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 474995499}
+      objectReference: {fileID: 1199390174}
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
@@ -8242,7 +8247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: ResueGame
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -8250,7 +8255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Menu, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2582135934106371455, guid: 30ccc974ec699814e839c4694fa41f66, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
