@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +20,4 @@ public class ShopManager : MonoBehaviour
     {
         
     }
-
-    //public void CheckPurchaseable()
-    //{
-    //    for (int i = 0; i < length; i++)
-    //    {
-
-    //    }
-    //}
 }
