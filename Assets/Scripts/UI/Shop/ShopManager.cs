@@ -10,22 +10,29 @@ public class ShopManager : MonoBehaviour
     public ShopItem[] shopItems;
     public ShopTemp[] shopPanels;
     public Button[] myPurchaseBt;
+    public GameManager gameManager;
+
+    //public const string PlayerCoins = "PlayerCoins";
+
 
 
     private void Start()
     {
-        coinUI.text = coins.ToString();
+        //coinUI.text = coins.ToString();
         LoadPanels();
-
         CheckPurcheaseable();
     }
 
-
+    private void Update()
+    {
+        coinUI.text = coins.ToString();
+    }
     public void AddCoins()
     {
         coins = coins + 1000;
-        coinUI.text = coins.ToString();
+        //coinUI.text = coins.ToString();
         CheckPurcheaseable();
+
     }
 
     public void CheckPurcheaseable()
@@ -62,5 +69,40 @@ public class ShopManager : MonoBehaviour
             CheckPurcheaseable();
             myPurchaseBt[btNm].gameObject.SetActive(false);
         }
+    }  
+    
+    public void LvlComplete()
+    {
+        coins = coins + 100;
+        Debug.Log("+100");
+    }
+    public void SaveCurrency()
+    {
+        string save = JsonUtility.ToJson(coins);
+
+        File.WriteAllText(path, save);
+
+
+        //PlayerPrefs.SetInt(PlayerCoins, coins);
+
+        //PlayerPrefs.Save();
+    }
+
+    public void LoadCurrenccy()
+    {
+        //coins = PlayerPrefs.GetInt(PlayerCoins);
+
+
+
+
+
+    }
+
+    public void DeleteCurrency()
+    {
+        
+        
+        
+        //PlayerPrefs.DeleteKey(PlayerCoins);
     }
 }

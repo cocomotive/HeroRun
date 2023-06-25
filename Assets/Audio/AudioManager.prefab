@@ -45,13 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 1
-    clip: {fileID: 0}
-    volume: 0
+  - name: Coin
+    clip: {fileID: 8300000, guid: 27785f6e6e913084da20e03dbd006a7b, type: 3}
+    volume: 5
     loop: 0
     source: {fileID: 0}
-  - name: 2
-    clip: {fileID: 0}
-    volume: 0
+  - name: BackBt
+    clip: {fileID: 8300000, guid: 03cfda8fc0ba7c8488101c8271cd7b33, type: 3}
+    volume: 5
+    loop: 0
+    source: {fileID: 0}
+  - name: Button
+    clip: {fileID: 8300000, guid: 2d2b9f46e633bf94b966c7985cf9e8ff, type: 3}
+    volume: 5
+    loop: 0
+    source: {fileID: 0}
+  - name: HealthPack
+    clip: {fileID: 8300000, guid: 6093381cda5aac6449a968ecd93e3d67, type: 3}
+    volume: 5
     loop: 0
     source: {fileID: 0}
