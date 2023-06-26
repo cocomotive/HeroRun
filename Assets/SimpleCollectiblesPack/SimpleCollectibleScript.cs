@@ -22,7 +22,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		audiomanager = AudioManager.instance;
+		audiomanager = GameObject.FindGameObjectWithTag("audio").GetComponent<AudioManager>();
 	}
 	
 	// Update is called once per frame
@@ -52,8 +52,8 @@ public class SimpleCollectibleScript : MonoBehaviour {
 		if (CollectibleType == CollectibleTypes.NoType) {
 
 			//Add in code here;
-			audiomanager.Play("Coin");
-			
+			//audiomanager.Play("Coin");
+			audiomanager.PlaySfx(audiomanager.coin);
 			Debug.Log ("Sume 100 puntos");
 
 		}

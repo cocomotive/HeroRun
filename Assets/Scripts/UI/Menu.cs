@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class Menu : MonoBehaviour
     public static bool GamePaused = false;
     public GameObject pauseMenuUI;
     public AudioManager audioManager;
+    public CurrencyManager currencyManager;
+
 
 
     private void Start()
     {
-        audioManager = AudioManager.instance;
+        //audioManager = AudioManager.instance;
     }
     public void PlayGame()
     {
@@ -49,22 +52,28 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
+    public void LoadLvl2()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public void BtSound()
     {
-        audioManager.Play("Button");
+        //audioManager.Play("Button");
     }
     public void BackBtSound()
     {
-        audioManager.Play("BackBt");
+        //audioManager.Play("BackBt");
     }
     public void BuyBtSound()
     {
-        audioManager.Play("BuyBt");
+        //audioManager.Play("BuyBt");
     }
 
     //private void OnTriggerEnter(Collider other)
     //{
     //    other.GetComponent<Wincheck>()?.Win;
     //}
+    
+    
 }

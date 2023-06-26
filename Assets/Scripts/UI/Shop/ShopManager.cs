@@ -10,30 +10,24 @@ public class ShopManager : MonoBehaviour
     public ShopItem[] shopItems;
     public ShopTemp[] shopPanels;
     public Button[] myPurchaseBt;
-    public GameManager gameManager;
-
-    //public const string PlayerCoins = "PlayerCoins";
+    public CurrencyManager currencyManager;
 
 
 
     private void Start()
     {
-        //coinUI.text = coins.ToString();
+        currencyManager = FindObjectOfType<CurrencyManager>();
+        coins = currencyManager.goldCurrency;
+        coinUI.text = coins.ToString();
         LoadPanels();
-        CheckPurcheaseable();
     }
 
     private void Update()
     {
+        coins = currencyManager.goldCurrency;
         coinUI.text = coins.ToString();
-    }
-    public void AddCoins()
-    {
-        coins = coins + 1000;
-        //coinUI.text = coins.ToString();
         CheckPurcheaseable();
-
-    }
+    }   
 
     public void CheckPurcheaseable()
     {
@@ -68,41 +62,12 @@ public class ShopManager : MonoBehaviour
             coinUI.text = coins.ToString();
             CheckPurcheaseable();
             myPurchaseBt[btNm].gameObject.SetActive(false);
+            currencyManager.Discount();
         }
     }  
-    
-    public void LvlComplete()
+
+    public void AddCurrency()
     {
-        coins = coins + 100;
-        Debug.Log("+100");
-    }
-    public void SaveCurrency()
-    {
-        string save = JsonUtility.ToJson(coins);
-
-        File.WriteAllText(path, save);
-
-
-        //PlayerPrefs.SetInt(PlayerCoins, coins);
-
-        //PlayerPrefs.Save();
-    }
-
-    public void LoadCurrenccy()
-    {
-        //coins = PlayerPrefs.GetInt(PlayerCoins);
-
-
-
-
-
-    }
-
-    public void DeleteCurrency()
-    {
-        
-        
-        
-        //PlayerPrefs.DeleteKey(PlayerCoins);
+        currencyManager.AddCoins();
     }
 }

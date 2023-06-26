@@ -5,12 +5,12 @@ using UnityEngine;
 public class WinCheck : MonoBehaviour
 {
     public GameObject winMenuUI;
-    //public Currency currency;
+    public CurrencyManager currencyManager;
 
     public void Win()
     {
         winMenuUI.SetActive(true);
         Time.timeScale = 0f;
-       //currency.LvlComplete();
+        currencyManager.LvlComplete();
     }
 }

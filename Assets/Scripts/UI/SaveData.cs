@@ -6,12 +6,7 @@ using System;
 [Serializable]
 public class SaveData
 {
-    public int playerCrystals;
-    public int playerCoins;
-
-  
-
-
-
+    [SerializeField] public int coins;
+    
 
 }

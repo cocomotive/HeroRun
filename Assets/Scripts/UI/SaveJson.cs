@@ -5,10 +5,26 @@ using System.IO;
 
 public class SaveJson : MonoBehaviour
 {
-    [SerializeField] SaveData data;
+    [SerializeField] CurrencyManager data;
 
-    string path;
 
+    public static SaveJson instance;
+
+    public string path;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     private void Start()
     {
         path = Application.persistentDataPath + "/save.json";
@@ -22,35 +38,25 @@ public class SaveJson : MonoBehaviour
             SaveGame();
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SaveGame();
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadGame();
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            DeleteSave();
-        }
-    }
     public void SaveGame()
     {
         string save = JsonUtility.ToJson(data);
 
         File.WriteAllText(path, save);
+
+        Debug.Log("SAVE");
     }
     public void LoadGame()
     {
         string save = File.ReadAllText(path);
+
         JsonUtility.FromJsonOverwrite(save, data);
+
+        Debug.Log("LOAD");
     }
     public void DeleteSave()
     {
-        data = new SaveData();
+        data = new CurrencyManager();
         SaveGame();
     }
 }
