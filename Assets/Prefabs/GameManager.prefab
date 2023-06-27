@@ -1,5 +1,96 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1826380134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1826380136}
+  - component: {fileID: 1826380135}
+  m_Layer: 0
+  m_Name: Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1826380136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826380134}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 98.96495, y: 7.9059467, z: -2.9377365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7231144793437105525}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1826380135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826380134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af917bba3e48524da87d310a302240a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eneabled: 0
+  categoriesOfPool:
+  - name: Recolectables
+    objectPool:
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+    - prefab: {fileID: 0}
+      utilityRefence: []
+      amount: 0
+      pool: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &7231144793437105527
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +102,6 @@ GameObject:
   - component: {fileID: 7231144793437105525}
   - component: {fileID: 7231144793437105526}
   - component: {fileID: 7231144793437105524}
-  - component: {fileID: 7231144793437105531}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -30,7 +120,8 @@ Transform:
   m_LocalPosition: {x: 17.607948, y: -20.06372, z: 21.55236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1826380136}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,28 +153,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 685f2786fdec78643a1b495d70627d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7231144793437105531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7231144793437105527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af917bba3e48524da87d310a302240a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eneabled: 1
-  categoriesOfPool:
-  - name: Particulas
-    objectPool: []
-  - name: Recolectables
-    objectPool:
-    - prefab: {fileID: 5462504586549689884, guid: 6c4a3085d621d7c4eaa017dbd1232568, type: 3}
-      utilityRefence: []
-      amount: 20
-      pool: []
-  references:
-    version: 2
-    RefIds: []

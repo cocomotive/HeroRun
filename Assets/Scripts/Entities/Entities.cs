@@ -79,7 +79,7 @@ public class Entities : MonoBehaviour
 
     private void Health_onDeath()
     {
-        PoolManager.SpawnPoolObject(PoolManager.SrchInCategory("Particulas", particlesOnDead.name), transform.position);
+        //PoolManager.SpawnPoolObject(PoolManager.SrchInCategory("Particulas", particlesOnDead.name), transform.position);
 
         for (int i = 0; i < drop.Count; i++)
         {
