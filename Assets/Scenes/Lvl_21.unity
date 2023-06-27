@@ -6255,7 +6255,7 @@ PrefabInstance:
       objectReference: {fileID: 1859599128}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: patrol.patrolParent
@@ -7671,7 +7671,7 @@ PrefabInstance:
       objectReference: {fileID: 1859599128}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.data[0].max
@@ -10467,7 +10467,7 @@ PrefabInstance:
       objectReference: {fileID: 1859599128}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: patrol.patrolParent
@@ -43841,7 +43841,7 @@ PrefabInstance:
       objectReference: {fileID: 1859599128}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: patrol.patrolParent

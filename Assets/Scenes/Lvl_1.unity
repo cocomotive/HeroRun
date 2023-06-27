@@ -193,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 1565373681}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: patrol.patrolParent
@@ -486,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 1565373681}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: health.life.total
@@ -3628,7 +3628,7 @@ PrefabInstance:
       objectReference: {fileID: 1565373681}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970387537980985835, guid: cc7ad10bccb3dd04d986fe328c71d8b1, type: 3}
       propertyPath: patrol.patrolParent
@@ -4703,7 +4703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.data[0].max
@@ -7564,28 +7564,6 @@ PrefabInstance:
       objectReference: {fileID: 1501420864}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37233310051097c4b9ba8945c149d6ba, type: 3}
---- !u!1 &1489488598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7231144793437105527, guid: effcda990f6af1348b852e8aa8acf203, type: 3}
-  m_PrefabInstance: {fileID: 7231144794697602947}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1489488602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489488598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af917bba3e48524da87d310a302240a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eneabled: 0
-  categoriesOfPool: []
-  references:
-    version: 2
-    RefIds: []
 --- !u!1 &1497003119
 GameObject:
   m_ObjectHideFlags: 0
@@ -11087,15 +11065,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.data[0].max
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.data[0].min
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9028498516224276507, guid: b2d7823c5fa7462449daa8a2824eb930, type: 3}
       propertyPath: drop.Array.data[0].gameObject
@@ -11114,6 +11092,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1826380135, guid: effcda990f6af1348b852e8aa8acf203, type: 3}
+      propertyPath: categoriesOfPool.Array.data[0].objectPool.Array.size
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7231144793437105525, guid: effcda990f6af1348b852e8aa8acf203, type: 3}
       propertyPath: m_RootOrder
       value: 2
