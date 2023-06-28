@@ -17,6 +17,8 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 	public GameObject collectEffect;
 
+	public Health health;
+
 	public AudioManager audiomanager;
 
 	// Use this for initialization
@@ -35,12 +37,14 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
+		
+		
 		if (other.tag == "Player") {
-			Collect ();
+			Collect (other.GetComponent<Entities>());
 		}
 	}
 
-	public void Collect()
+	public void Collect(Entities player)
 	{
 		//if(collectSound)
 		//	AudioSource.PlayClipAtPoint(collectSound, transform.position);
@@ -60,6 +64,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 		if (CollectibleType == CollectibleTypes.Type1) {
 
 			//Add in code here;
+			player.health.LifeRecovery(5);
 
 			Debug.Log ("Do NoType Command");
 		}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
 
-    public int goldCurrency;
+    public float goldCurrency;
 
     public static CurrencyManager instance;
 
@@ -46,7 +46,7 @@ public class CurrencyManager : MonoBehaviour
 
     public void AddCoins()
     {
-        goldCurrency = goldCurrency + 1000;
+        goldCurrency = goldCurrency + 1000 * ItemShop.instance.coinsMult;
         json.SaveGame();
         //coinUI.text = coins.ToString();
     }
