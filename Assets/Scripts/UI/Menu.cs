@@ -54,7 +54,11 @@ public class Menu : MonoBehaviour
     }
     public void LoadLvl2()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(3);
+    }
+    public void LoadMinigame()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void BtSound()
