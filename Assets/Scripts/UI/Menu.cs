@@ -55,10 +55,12 @@ public class Menu : MonoBehaviour
     public void LoadLvl2()
     {
         SceneManager.LoadScene(3);
+        Time.timeScale = 1f;
     }
     public void LoadMinigame()
     {
         SceneManager.LoadScene(2);
+        Time.timeScale = 1f;
     }
 
     public void BtSound()

@@ -21,7 +21,7 @@ public class StaminaSystem : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("currentStamina"))
+        if (PlayerPrefs.HasKey("currentSamina"))
         {
             Load();
         }
@@ -141,7 +141,7 @@ public class StaminaSystem : MonoBehaviour
 
     void Load()
     {
-        currentStamina = PlayerPrefs.GetInt("currentStamina");
+        currentStamina = PlayerPrefs.GetInt("currentSamina");
         nextStaminaTime = StringToDateTime(PlayerPrefs.GetString("nextStaminaTime"));
         lastStaminaTime = StringToDateTime(PlayerPrefs.GetString("lastStaminaTime"));
     }
