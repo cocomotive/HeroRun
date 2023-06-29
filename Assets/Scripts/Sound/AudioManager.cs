@@ -38,11 +38,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //PlaySfx(theme);
+        PlaySfx(theme);
     }
     private void Update()
-    {       
-        
+    {
+        volumeManager = FindObjectOfType<VolumeManager>();
     }
     public void PlaySfx(AudioClip clip)
     {

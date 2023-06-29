@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.015078926, g: 0.009024546, b: 0.014053655, a: 1}
+  m_IndirectSpecularColor: {r: 0.015113503, g: 0.009046664, b: 0.014094996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1704,6 +1704,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416fd52f6048d8d4d9dfc9b4da478df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &213553891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213553884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b5a1a1aa48d8747b8575686eb0715b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMixer: {fileID: 24100000, guid: 4bd48d5d3b8d5b84cac6c9d857bf3fcf, type: 2}
+  masterSlider: {fileID: 657439546}
+  audioManager: {fileID: 1540162420}
+  upVolume: 0
 --- !u!4 &222270121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4802539185917164, guid: 4eca7a8ef879cfb41b294a8c0d69ea58, type: 3}
@@ -3218,6 +3234,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80099d9a489662b42bfb58fe09677762, type: 3}
+--- !u!114 &657439546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2368391853303053023, guid: a8bb1d591835f424a9f59f69bc41b18e, type: 3}
+  m_PrefabInstance: {fileID: 1547635087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &670840785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7794,6 +7821,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532610249}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1540162420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4831791989723135974, guid: fd8b48ec55ef91344977115e4a5918f7, type: 3}
+  m_PrefabInstance: {fileID: 9124330677473421075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daba2204c000f724a84ae818ffb8dd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1546739407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7889,6 +7927,14 @@ PrefabInstance:
     - target: {fileID: 2368391852830357537, guid: a8bb1d591835f424a9f59f69bc41b18e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368391853303053023, guid: a8bb1d591835f424a9f59f69bc41b18e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 213553891}
+    - target: {fileID: 2368391853303053023, guid: a8bb1d591835f424a9f59f69bc41b18e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetVolume
       objectReference: {fileID: 0}
     - target: {fileID: 2368391853847193380, guid: a8bb1d591835f424a9f59f69bc41b18e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11503,5 +11549,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4831791989723135974, guid: fd8b48ec55ef91344977115e4a5918f7, type: 3}
+      propertyPath: volumeManager
+      value: 
+      objectReference: {fileID: 213553891}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8b48ec55ef91344977115e4a5918f7, type: 3}
