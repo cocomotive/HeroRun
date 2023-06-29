@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        //audioManager = AudioManager.instance;
+        audioManager = AudioManager.instance;
     }
     public void PlayGame()
     {
@@ -63,15 +63,15 @@ public class Menu : MonoBehaviour
 
     public void BtSound()
     {
-        //audioManager.Play("Button");
+        audioManager.PlaySfx(audioManager.button);
     }
     public void BackBtSound()
     {
-        //audioManager.Play("BackBt");
+        audioManager.PlaySfx(audioManager.backBt);
     }
     public void BuyBtSound()
     {
-        //audioManager.Play("BuyBt");
+        audioManager.PlaySfx(audioManager.coin);
     }
 
     //private void OnTriggerEnter(Collider other)

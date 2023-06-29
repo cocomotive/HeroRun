@@ -5,7 +5,7 @@ using UnityEngine;
 public class CurrencyManager : MonoBehaviour
 {
 
-    public float goldCurrency;
+    public int goldCurrency;
 
     public static CurrencyManager instance;
 

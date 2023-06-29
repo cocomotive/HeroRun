@@ -6,7 +6,7 @@ public class ItemShop : MonoBehaviour
 {
     public static ItemShop instance;
 
-    public float coinsMult = 1;
+    public int coinsMult = 1;
 
     private void Awake()
     {
