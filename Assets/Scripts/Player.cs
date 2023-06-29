@@ -41,7 +41,7 @@ public class Player : AttackEntities
 
     public WinCheck winCheck;
 
-    public Health health;
+    //public Health health;
 
     _EventButton movementController;
 
@@ -54,7 +54,7 @@ public class Player : AttackEntities
     {
         _animator = GetComponent<Animator>();
         _animatorController = new AnimatorController(_animator);
-        health = GetComponent<Health>();
+        //health = GetComponent<Health>();
         _sword.enabled = false;
 
         _movements.onAir += _movements_onAir;
@@ -88,13 +88,13 @@ public class Player : AttackEntities
         EventManager.events.SearchOrCreate(EnumUI.life).Trigger(obj.Percentage());
     }
 
-    private void Update()
-    {
-        if (health.life.current <= 0)
-        {
-            //Activa canvas derrota
-        }
-    }
+    //private void Update()
+    //{
+    //    if (health.life.current <= 0)
+    //    {
+    //        //Activa canvas derrota
+    //    }
+    //}
 
     private void SimpleJump(params object[] parameters)
     {

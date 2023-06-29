@@ -9941,7 +9941,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 968476101}
+      - m_Target: {fileID: 204296879}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: BackBtSound
         m_Mode: 1
@@ -14553,6 +14553,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2028232254}
+        m_TargetAssemblyTypeName: StaminaSystem, Assembly-CSharp
+        m_MethodName: UseStamina
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1833290748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17108,9 +17120,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1194987028}
     - target: {fileID: 2684955428421497380, guid: 93cf11f60f16d98479b4294addde3793, type: 3}
+      propertyPath: btts.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2684955428421497380, guid: 93cf11f60f16d98479b4294addde3793, type: 3}
       propertyPath: staminaTimeText
       value: 
       objectReference: {fileID: 540152674}
+    - target: {fileID: 2684955428421497380, guid: 93cf11f60f16d98479b4294addde3793, type: 3}
+      propertyPath: btts.Array.data[0]
+      value: 
+      objectReference: {fileID: 1833290747}
+    - target: {fileID: 2684955428421497380, guid: 93cf11f60f16d98479b4294addde3793, type: 3}
+      propertyPath: btts.Array.data[1]
+      value: 
+      objectReference: {fileID: 766542033}
     - target: {fileID: 2684955428421497381, guid: 93cf11f60f16d98479b4294addde3793, type: 3}
       propertyPath: m_RootOrder
       value: 10

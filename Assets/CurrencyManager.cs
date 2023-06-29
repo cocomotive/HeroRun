@@ -11,10 +11,11 @@ public class CurrencyManager : MonoBehaviour
 
     public ShopManager shopManager;
 
-    public SaveJson json;
+    public static SaveJson json;
 
     private void Awake()
     {
+        json = SaveJson.instance;
         if (instance == null)
         {
             instance = this;
@@ -46,14 +47,14 @@ public class CurrencyManager : MonoBehaviour
 
     public void AddCoins()
     {
-        goldCurrency = goldCurrency + 1000 * ItemShop.instance.coinsMult;
+        goldCurrency = goldCurrency + 1000;// * ItemShop.instance.coinsMult;
         json.SaveGame();
         //coinUI.text = coins.ToString();
     }
     public void LvlComplete()
     {
-        goldCurrency = goldCurrency + 100;
-        json.SaveGame();
+        goldCurrency = goldCurrency + 100;       
         Debug.Log("+100");
+        json.SaveGame();
     }
 }

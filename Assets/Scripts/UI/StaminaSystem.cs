@@ -19,6 +19,8 @@ public class StaminaSystem : MonoBehaviour
     DateTime nextStaminaTime;
     DateTime lastStaminaTime;
 
+    public Button[] btts;
+
     private void Start()
     {
         if (PlayerPrefs.HasKey("currentSamina"))
@@ -37,6 +39,10 @@ public class StaminaSystem : MonoBehaviour
     {
         if(!HasEnoughStamina(staminaToUse))
         {
+                for (int i = 0; i < btts.Length; i++)
+                {
+                    btts[i].interactable = false;
+                }
             Debug.Log("no stamina");
             return;
         }

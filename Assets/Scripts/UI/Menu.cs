@@ -12,11 +12,12 @@ public class Menu : MonoBehaviour
     public AudioManager audioManager;
     public CurrencyManager currencyManager;
 
-
+    public static SaveJson json;
 
     private void Start()
     {
         audioManager = AudioManager.instance;
+        json = SaveJson.instance;
     }
     public void PlayGame()
     {
@@ -26,6 +27,7 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+        json.LoadGame();
     }
 
     public void ExitGame()
