@@ -7,6 +7,11 @@ public class WinCheck : MonoBehaviour
     public GameObject winMenuUI;
     public CurrencyManager currencyManager;
 
+
+    private void Start()
+    {
+        currencyManager = CurrencyManager.instance;
+    }
     public void Win()
     {
         winMenuUI.SetActive(true);
