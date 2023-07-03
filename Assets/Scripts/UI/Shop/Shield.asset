@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b55f0d6511504d8e4877f7cdedf5b, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
-  title: 
-  desc: 
-  image: {fileID: 0}
+  title: SHIELD
+  desc: Gives a shield to the hero.
+  image: {fileID: 21300000, guid: b22a914879621c343877dcdf54e10115, type: 3}
   baseCost: 100
   coinsMult: 1
   damageMult: 0
