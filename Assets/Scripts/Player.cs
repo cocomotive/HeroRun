@@ -49,6 +49,7 @@ public class Player : AttackEntities
 
     _EventButton attackController;
 
+    protected override float dmgMultiply => ItemShop.instance.damageMult;
 
     private void Start()
     {

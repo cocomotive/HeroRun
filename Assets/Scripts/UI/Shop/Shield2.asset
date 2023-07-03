@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b55f0d6511504d8e4877f7cdedf5b, type: 3}
   m_Name: Shield2
   m_EditorClassIdentifier: 
-  title: SHIELD   II
-  description: 15% more shields.
+  title: 
+  desc: 
+  image: {fileID: 0}
   baseCost: 1000
+  coinsMult: 0
+  damageMult: 0
+  enemyDmgMult: -0.2

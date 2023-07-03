@@ -8,16 +8,18 @@ public class ItemShop : MonoBehaviour
 
     public int coinsMult = 1;
 
+    public float damageMult = 1;
+
+    public float enemyDmgMult = 1;
+
     private void Awake()
     {
         if (instance != null)
         {
-            Destroy(gameObject);
-            return;
+            Destroy(instance.gameObject);
         }        
+
         instance = this;        
         DontDestroyOnLoad(this);        
     }
-
-
 }

@@ -27,6 +27,8 @@ public class RedEnemy : AttackEntities
 
     Vector3 distance;
 
+    protected override float dmgMultiply => ItemShop.instance.enemyDmgMult;
+
     public override void Attack()
     {
         if (attackDeley.Chck)

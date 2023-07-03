@@ -8,6 +8,13 @@ public class AttackClass
     [SerializeField]
     float _attackDmg;
 
+    public AttackClass SetDMGMultiply(float m)
+    {
+        _attackDmg *= m;
+
+        return this;
+    }
+
     public virtual void Attack(Vector3 pos, params Entities[] toAttack)
     {
         //_sword.enabled = true;

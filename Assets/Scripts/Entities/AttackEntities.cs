@@ -17,6 +17,14 @@ public class AttackEntities : MoveEntities
     [SerializeField]
     AttackClass attackClass;
 
+    protected virtual float dmgMultiply => 1;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        attackClass.SetDMGMultiply(dmgMultiply);
+    }
+
     public virtual void Attack()
     {
         attackClass.Attack( transform.position ,AttackDetection());

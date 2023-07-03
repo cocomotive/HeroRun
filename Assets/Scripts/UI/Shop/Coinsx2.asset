@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Coinsx2
   m_EditorClassIdentifier: 
   title: COINS x2
-  description: Multiplicates coins earned.
+  desc: Multiplicates the coins earned.
+  image: {fileID: 21300000, guid: 65dfbfe26e74ec64abdff398597e9606, type: 3}
   baseCost: 2000
+  coinsMult: 1
+  damageMult: 0
+  enemyDmgMult: 0
