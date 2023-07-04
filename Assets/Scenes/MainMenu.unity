@@ -2795,9 +2795,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -27.987976
       objectReference: {fileID: 0}
+    - target: {fileID: 7898339791961172332, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_text
+      value: DAMAGE
+      objectReference: {fileID: 0}
     - target: {fileID: 7898339792150214698, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 27.988037
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339792150214699, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_text
+      value: Gives more damage to the hero attacks
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Pivot.x
@@ -2884,13 +2892,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589635, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 828168714}
+    - target: {fileID: 7898339792757589635, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: shopItem
       value: 
-      objectReference: {fileID: 11400000, guid: af1cdc4f92749924bb85fde47e80b323, type: 2}
+      objectReference: {fileID: 11400000, guid: f1ec74c85bba953469e1facd0418ee2d, type: 2}
     - target: {fileID: 7898339792757589759, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Name
       value: Button Shop (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872200, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1252a74bcc0aa4469045d8065b2c4ed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e0d92ad22620146a15dad841553627, type: 3}
 --- !u!1 &444527226
@@ -3796,7 +3812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044333217457502985, guid: 097942696cc2cb24589534d9107976f7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1711201895140747312, guid: 097942696cc2cb24589534d9107976f7, type: 3}
       propertyPath: m_Pivot.x
@@ -8098,6 +8114,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 27.988037
       objectReference: {fileID: 0}
+    - target: {fileID: 7898339792150214699, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_text
+      value: Reduce enemy  damage x 0%
+      objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8188,7 +8208,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9d6d3fa689cdbfa4c99bda4f86d48c9e, type: 2}
     - target: {fileID: 7898339792757589759, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Name
-      value: Button Shop
+      value: Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e0d92ad22620146a15dad841553627, type: 3}
@@ -11640,9 +11660,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -27.987976
       objectReference: {fileID: 0}
+    - target: {fileID: 7898339791961172332, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_text
+      value: MORE COINS!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339791961172332, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_fontSize
+      value: 25.95
+      objectReference: {fileID: 0}
     - target: {fileID: 7898339792150214698, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 27.988037
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339792150214699, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_text
+      value: You can multiply the conis x2
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Pivot.x
@@ -11734,8 +11766,32 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5fed9e88e68f2dc4880c9a3187dffc78, type: 2}
     - target: {fileID: 7898339792757589759, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Name
-      value: Button Shop (1)
+      value: Coins x2
       objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9915058
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.13006265
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -14.946
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872200, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65dfbfe26e74ec64abdff398597e9606, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e0d92ad22620146a15dad841553627, type: 3}
 --- !u!114 &2028232254 stripped
