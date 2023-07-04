@@ -89,13 +89,13 @@ public class Player : AttackEntities
         EventManager.events.SearchOrCreate(EnumUI.life).Trigger(obj.Percentage());
     }
 
-    //private void Update()
-    //{
-    //    if (health.life.current <= 0)
-    //    {
-    //        //Activa canvas derrota
-    //    }
-    //}
+    private void Update()
+    {
+        if (health.life.current <= 0)
+        {
+            //Activa canvas derrota
+        }
+    }
 
     private void SimpleJump(params object[] parameters)
     {
