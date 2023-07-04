@@ -2784,7 +2784,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346300332}
   m_CullTransparentMesh: 1
---- !u!1001 &435292798
+--- !u!1001 &435554581
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2797,7 +2797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898339791961172332, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_text
-      value: DAMAGE
+      value: DAMAGE!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339791961172332, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_fontSize
+      value: 25.95
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792150214698, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2805,7 +2809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792150214699, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_text
-      value: Gives more damage to the hero attacks
+      value: You gain 20% of damage
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Pivot.x
@@ -2861,15 +2865,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2892,21 +2896,37 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589635, guid: b1e0d92ad22620146a15dad841553627, type: 3}
-      propertyPath: image
-      value: 
-      objectReference: {fileID: 828168714}
-    - target: {fileID: 7898339792757589635, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: shopItem
       value: 
       objectReference: {fileID: 11400000, guid: f1ec74c85bba953469e1facd0418ee2d, type: 2}
     - target: {fileID: 7898339792757589759, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Name
-      value: Button Shop (2)
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9915058
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.13006265
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898339793721872199, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -14.946
       objectReference: {fileID: 0}
     - target: {fileID: 7898339793721872200, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d1252a74bcc0aa4469045d8065b2c4ed, type: 3}
+      objectReference: {fileID: 21300000, guid: 5827e69522e97a94287efcffc96bceb7, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1e0d92ad22620146a15dad841553627, type: 3}
 --- !u!1 &444527226
@@ -3812,7 +3832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1044333217457502985, guid: 097942696cc2cb24589534d9107976f7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1711201895140747312, guid: 097942696cc2cb24589534d9107976f7, type: 3}
       propertyPath: m_Pivot.x
@@ -4288,7 +4308,7 @@ RectTransform:
   m_Children:
   - {fileID: 232090590}
   - {fileID: 131125515}
-  - {fileID: 1701826573}
+  - {fileID: 1582835104}
   - {fileID: 828168713}
   - {fileID: 148455680}
   - {fileID: 22712860}
@@ -8110,13 +8130,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -27.987976
       objectReference: {fileID: 0}
+    - target: {fileID: 7898339791961172332, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+      propertyPath: m_text
+      value: HARD SKIN!
+      objectReference: {fileID: 0}
     - target: {fileID: 7898339792150214698, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 27.988037
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792150214699, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_text
-      value: Reduce enemy  damage x 0%
+      value: Reduce enemy  damage x 20%
       objectReference: {fileID: 0}
     - target: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
       propertyPath: m_Pivot.x
@@ -9087,6 +9111,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571411143}
   m_CullTransparentMesh: 1
+--- !u!224 &1582835104 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
+  m_PrefabInstance: {fileID: 435554581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607235865
 GameObject:
   m_ObjectHideFlags: 0
@@ -9607,11 +9636,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1701826573 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7898339792757589632, guid: b1e0d92ad22620146a15dad841553627, type: 3}
-  m_PrefabInstance: {fileID: 435292798}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1740747819
 GameObject:
   m_ObjectHideFlags: 0

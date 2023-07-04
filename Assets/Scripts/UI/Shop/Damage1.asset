@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594b55f0d6511504d8e4877f7cdedf5b, type: 3}
   m_Name: Damage1
   m_EditorClassIdentifier: 
-  title: 
-  desc: 
-  image: {fileID: 0}
-  baseCost: 500
+  title: "DAMAGE!\t"
+  desc: You gain 20% of damage
+  image: {fileID: 21300000, guid: 5827e69522e97a94287efcffc96bceb7, type: 3}
+  baseCost: 1000
   coinsMult: 0
-  damageMult: 0.1
+  damageMult: 0.2
   enemyDmgMult: 0

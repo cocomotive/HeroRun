@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Helath1
   m_EditorClassIdentifier: 
   title: HEALTH   I
-  description: 20% More health.
+  desc: 
+  image: {fileID: 0}
   baseCost: 500
+  coinsMult: 0
+  damageMult: 0
+  enemyDmgMult: 0.5
