@@ -6,6 +6,7 @@ public class WinCheck : MonoBehaviour
 {
     public GameObject winMenuUI;
     public CurrencyManager currencyManager;
+    public GameObject loseMenuUI;
 
 
     private void Start()
@@ -18,4 +19,6 @@ public class WinCheck : MonoBehaviour
         Time.timeScale = 0f;
         currencyManager.LvlComplete();
     }
+
+    
 }

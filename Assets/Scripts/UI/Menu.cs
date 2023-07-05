@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     public GameObject pauseMenuUI;
     public AudioManager audioManager;
     public CurrencyManager currencyManager;
+    public GameObject loseMenuUI;
 
     public static SaveJson json;
 
@@ -22,6 +23,7 @@ public class Menu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1f;
     }
     public void MainMenu()
     {
@@ -77,11 +79,15 @@ public class Menu : MonoBehaviour
     {
         audioManager.PlaySfx(audioManager.coin);
     }
-
+    public void LoseUI()
+    {
+        loseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
     //private void OnTriggerEnter(Collider other)
     //{
     //    other.GetComponent<Wincheck>()?.Win;
     //}
-    
-    
+
+
 }

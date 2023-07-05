@@ -49,6 +49,10 @@ public class Player : AttackEntities
 
     _EventButton attackController;
 
+    public GameManager gameManager;
+
+    public Canvas canvas;
+
     protected override float dmgMultiply => ItemShop.instance.damageMult;
 
     private void Start()
@@ -81,7 +85,6 @@ public class Player : AttackEntities
 
         jumpController.action += SimpleJump;
 
-
     }
 
     private void Health_onLifeChange(IGetPercentage obj)
@@ -94,6 +97,7 @@ public class Player : AttackEntities
         if (health.life.current <= 0)
         {
             //Activa canvas derrota
+            Canvas.FindObjectOfType<Menu>().LoseUI();
         }
     }
 

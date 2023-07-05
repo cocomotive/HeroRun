@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-
     public ShopManager shopManager;
 
 
@@ -23,5 +22,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         //instance = this;
+        //loseMenuUI = FindObjectOfType<GameObject>();
     }
+
 }
